@@ -16,9 +16,10 @@
   h3 { font-size: 0.85rem; color: #2a5db0; margin: 14px 0 6px; }
   ul.grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 12px; }
   ul.grid li { font-size: 0.82rem; line-height: 1.5; }
-  ul.grid a { color: #1a3a6c; text-decoration: none; padding: 3px 6px; border-radius: 4px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  ul.grid a { color: #1a3a6c; text-decoration: none; padding: 3px 6px; border-radius: 4px; display: flex; align-items: baseline; gap: 6px; }
+  ul.grid a .label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   ul.grid a:hover { background: #e6eef9; }
-  .code { color: #2a5db0; font-weight: 700; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.78rem; margin-right: 4px; }
+  .code { flex: 0 0 auto; min-width: 3.4em; color: #2a5db0; font-weight: 700; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.78rem; }
   .hero { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 4px 0 20px; }
   .hero-card { display: flex; flex-direction: column; gap: 4px; background: #fff; border: 1px solid #d4dded; border-radius: 10px; padding: 14px 16px; text-decoration: none; color: #1a2333; }
   .hero-card:hover { border-color: #2a5db0; box-shadow: 0 2px 8px rgba(12,37,82,0.08); }
@@ -34,7 +35,7 @@
 <body>
 <header>
   <h1>バイブコーディング図鑑 — 管理トップ</h1>
-  <div class="sub">作りかけ含め、全 HTML ページにリンクで飛べる目次です。最終更新: 2026-09-05 11:49 JST</div>
+  <div class="sub">作りかけ含め、全 HTML ページにリンクで飛べる目次です。最終更新: 2026-09-08 06:00 JST</div>
 </header>
 <main>
   <div class="hero">
@@ -47,485 +48,528 @@
   <div class="filter"><input id="q" type="search" placeholder="絞り込み（ID やタイトルで検索）..." autofocus></div>
   <h2>本を読む（リーダー・前付け・あとがき）</h2>
     <ul class="grid">
-      <li data-search="0_concept_spread 前付け 0 - 扉「知らないことばで、止まらない。」"><a href="/front_section/0_concept_spread.html">前付け 0 - 扉「知らないことばで、止まらない。」</a></li>
-      <li data-search="1_a1_preface 前付け 1 - a-1 まえがき (front_essay)"><a href="/front_section/1_a1_preface.html">前付け 1 - A-1 まえがき (front_essay)</a></li>
-      <li data-search="1_concept_preface 前付け 1 - 扉＋まえがき（圧縮案 5 見開き / fr-01）"><a href="/front_section/1_concept_preface.html">前付け 1 - 扉＋まえがき（圧縮案 5 見開き / FR-01）</a></li>
-      <li data-search="2_a2_anatomy 前付け 2 - a-2 見開きの読み方 (front_anatomy)"><a href="/front_section/2_a2_anatomy.html">前付け 2 - A-2 見開きの読み方 (front_anatomy)</a></li>
-      <li data-search="3_a3_a9_map_index 前付け 3 - a-3 + a-9 図鑑の歩き方と索引 (front_map_index)"><a href="/front_section/3_a3_a9_map_index.html">前付け 3 - A-3 + A-9 図鑑の歩き方と索引 (front_map_index)</a></li>
-      <li data-search="4_a4_a5_a6_legend_marks 前付け 4 - a-4 + a-5 + a-6 注意マークの凡例 (front_legend_marks)"><a href="/front_section/4_a4_a5_a6_legend_marks.html">前付け 4 - A-4 + A-5 + A-6 注意マークの凡例 (front_legend_marks)</a></li>
-      <li data-search="4_legend_all 前付け 4 - この本の記号と凡例（1 見開きに集約 / 旧 fr-04+fr-05）"><a href="/front_section/4_legend_all.html">前付け 4 - この本の記号と凡例（1 見開きに集約 / 旧 FR-04+FR-05）</a></li>
-      <li data-search="5_a7_a8_swatch 前付け 5 - a-8 色と記号の凡例（2 ページ / 図のタイプは廃止）"><a href="/front_section/5_a7_a8_swatch.html">前付け 5 - A-8 色と記号の凡例（2 ページ / 図のタイプは廃止）</a></li>
-      <li data-search="6_a10_a11_log_glossary 前付け 6 - a-10 + a-11 更新履歴と略称 (front_log_glossary)"><a href="/front_section/6_a10_a11_log_glossary.html">前付け 6 - A-10 + A-11 更新履歴と略称 (front_log_glossary)</a></li>
-      <li data-search="9_full_index 巻末 - 全件索引（総目次）"><a href="/front_section/9_full_index.html">巻末 - 全件索引（総目次）</a></li>
-      <li data-search="afterword あとがき — この本ができるまで"><a href="/back_section/afterword.html">あとがき — この本ができるまで</a></li>
-      <li data-search="bk3_model_snapshot bk-3 モデル勢力図スナップショット"><a href="/back_section/bk3_model_snapshot.html">BK-3 モデル勢力図スナップショット</a></li>
-      <li data-search="index 本のように読む"><a href="/book/index.html">本のように読む</a></li>
-      <li data-search="index 前付け 7 見開き 一覧"><a href="/front_section/index.html">前付け 7 見開き 一覧</a></li>
-      <li data-search="page_count_plan 前付け・後付け ページ数設計メモ"><a href="/front_section/page_count_plan.html">前付け・後付け ページ数設計メモ</a></li>
+      <li data-search="0_concept_spread 前付け 0 - 扉「知らないことばで、止まらない。」"><a href="/front_section/0_concept_spread.html"><span class="label">前付け 0 - 扉「知らないことばで、止まらない。」</span></a></li>
+      <li data-search="1_a1_preface 前付け 1 - a-1 まえがき (front_essay)"><a href="/front_section/1_a1_preface.html"><span class="label">前付け 1 - A-1 まえがき (front_essay)</span></a></li>
+      <li data-search="1_concept_preface 前付け 1 - 扉＋まえがき（圧縮案 5 見開き / fr-01）"><a href="/front_section/1_concept_preface.html"><span class="label">前付け 1 - 扉＋まえがき（圧縮案 5 見開き / FR-01）</span></a></li>
+      <li data-search="2_a2_anatomy 前付け 2 - a-2 見開きの読み方 (front_anatomy)"><a href="/front_section/2_a2_anatomy.html"><span class="label">前付け 2 - A-2 見開きの読み方 (front_anatomy)</span></a></li>
+      <li data-search="3_a3_a9_map_index 前付け 3 - a-3 + a-9 図鑑の歩き方と索引 (front_map_index)"><a href="/front_section/3_a3_a9_map_index.html"><span class="label">前付け 3 - A-3 + A-9 図鑑の歩き方と索引 (front_map_index)</span></a></li>
+      <li data-search="4_a4_a5_a6_legend_marks 前付け 4 - a-4 + a-5 + a-6 注意マークの凡例 (front_legend_marks)"><a href="/front_section/4_a4_a5_a6_legend_marks.html"><span class="label">前付け 4 - A-4 + A-5 + A-6 注意マークの凡例 (front_legend_marks)</span></a></li>
+      <li data-search="4_legend_all 前付け 4 - この本の記号と凡例（1 見開きに集約 / 旧 fr-04+fr-05）"><a href="/front_section/4_legend_all.html"><span class="label">前付け 4 - この本の記号と凡例（1 見開きに集約 / 旧 FR-04+FR-05）</span></a></li>
+      <li data-search="5_a7_a8_swatch 前付け 5 - a-8 色と記号の凡例（2 ページ / 図のタイプは廃止）"><a href="/front_section/5_a7_a8_swatch.html"><span class="label">前付け 5 - A-8 色と記号の凡例（2 ページ / 図のタイプは廃止）</span></a></li>
+      <li data-search="6_a10_a11_log_glossary 前付け 6 - a-10 + a-11 更新履歴と略称 (front_log_glossary)"><a href="/front_section/6_a10_a11_log_glossary.html"><span class="label">前付け 6 - A-10 + A-11 更新履歴と略称 (front_log_glossary)</span></a></li>
+      <li data-search="9_full_index 巻末 - 全件索引（総目次）"><a href="/front_section/9_full_index.html"><span class="label">巻末 - 全件索引（総目次）</span></a></li>
+      <li data-search="afterword あとがき — この本ができるまで"><a href="/back_section/afterword.html"><span class="label">あとがき — この本ができるまで</span></a></li>
+      <li data-search="bk3_model_snapshot bk-3 モデル勢力図スナップショット"><a href="/back_section/bk3_model_snapshot.html"><span class="label">BK-3 モデル勢力図スナップショット</span></a></li>
+      <li data-search="index 本のように読む"><a href="/book/index.html"><span class="label">本のように読む</span></a></li>
+      <li data-search="index 前付け 7 見開き 一覧"><a href="/front_section/index.html"><span class="label">前付け 7 見開き 一覧</span></a></li>
+      <li data-search="page_count_plan 前付け・後付け ページ数設計メモ"><a href="/front_section/page_count_plan.html"><span class="label">前付け・後付け ページ数設計メモ</span></a></li>
     </ul>
   <h2>探す（検索・読者ルート）</h2>
     <ul class="grid">
-      <li data-search="index 読者タイプ別 おすすめルート — たたき台"><a href="/reading_routes/index.html">読者タイプ別 おすすめルート — たたき台</a></li>
-      <li data-search="index 検索"><a href="/search/index.html">検索</a></li>
+      <li data-search="index 読者タイプ別 おすすめルート — たたき台"><a href="/reading_routes/index.html"><span class="label">読者タイプ別 おすすめルート — たたき台</span></a></li>
+      <li data-search="index 検索"><a href="/search/index.html"><span class="label">検索</span></a></li>
     </ul>
   <h2>エントリプレビュー (A〜J)</h2>
     <h3>目次・一覧</h3>
     <ul class="grid">
-      <li data-search="index preview 目次"><a href="/prototypes/preview/index.html">preview 目次</a></li>
-      <li data-search="overview 全エントリ一覧"><a href="/prototypes/preview/overview.html">全エントリ一覧</a></li>
+      <li data-search="index preview 目次"><a href="/prototypes/preview/index.html"><span class="label">preview 目次</span></a></li>
+      <li data-search="overview 全エントリ一覧"><a href="/prototypes/preview/overview.html"><span class="label">全エントリ一覧</span></a></li>
     </ul>
     <h3>A</h3>
     <ul class="grid">
-      <li data-search="a-1 まえがき"><span class="code">A-1</span><a href="/prototypes/preview/A-1.html">まえがき</a></li>
-      <li data-search="a-2 この本の読み方"><span class="code">A-2</span><a href="/prototypes/preview/A-2.html">この本の読み方</a></li>
-      <li data-search="a-3 図鑑の歩き方"><span class="code">A-3</span><a href="/prototypes/preview/A-3.html">図鑑の歩き方</a></li>
-      <li data-search="a-4 体験区分の凡例"><span class="code">A-4</span><a href="/prototypes/preview/A-4.html">体験区分の凡例</a></li>
-      <li data-search="a-5 読者レベルの凡例"><span class="code">A-5</span><a href="/prototypes/preview/A-5.html">読者レベルの凡例</a></li>
-      <li data-search="a-6 評価日・時変情報の見方"><span class="code">A-6</span><a href="/prototypes/preview/A-6.html">評価日・時変情報の見方</a></li>
-      <li data-search="a-7 図のタイプ"><span class="code">A-7</span><a href="/prototypes/preview/A-7.html">図のタイプ</a></li>
-      <li data-search="a-8 色・記号の凡例"><span class="code">A-8</span><a href="/prototypes/preview/A-8.html">色・記号の凡例</a></li>
-      <li data-search="a-9 索引"><span class="code">A-9</span><a href="/prototypes/preview/A-9.html">索引</a></li>
-      <li data-search="a-10 更新履歴と更新方針"><span class="code">A-10</span><a href="/prototypes/preview/A-10.html">更新履歴と更新方針</a></li>
-      <li data-search="a-11 略称表記"><span class="code">A-11</span><a href="/prototypes/preview/A-11.html">略称表記</a></li>
+      <li data-search="a-1 まえがき"><a href="/prototypes/preview/A-1.html"><span class="code">A-1</span><span class="label">まえがき</span></a></li>
+      <li data-search="a-2 この本の読み方"><a href="/prototypes/preview/A-2.html"><span class="code">A-2</span><span class="label">この本の読み方</span></a></li>
+      <li data-search="a-3 図鑑の歩き方"><a href="/prototypes/preview/A-3.html"><span class="code">A-3</span><span class="label">図鑑の歩き方</span></a></li>
+      <li data-search="a-4 体験区分の凡例"><a href="/prototypes/preview/A-4.html"><span class="code">A-4</span><span class="label">体験区分の凡例</span></a></li>
+      <li data-search="a-5 読者レベルの凡例"><a href="/prototypes/preview/A-5.html"><span class="code">A-5</span><span class="label">読者レベルの凡例</span></a></li>
+      <li data-search="a-6 評価日・時変情報の見方"><a href="/prototypes/preview/A-6.html"><span class="code">A-6</span><span class="label">評価日・時変情報の見方</span></a></li>
+      <li data-search="a-7 図のタイプ"><a href="/prototypes/preview/A-7.html"><span class="code">A-7</span><span class="label">図のタイプ</span></a></li>
+      <li data-search="a-8 色・記号の凡例"><a href="/prototypes/preview/A-8.html"><span class="code">A-8</span><span class="label">色・記号の凡例</span></a></li>
+      <li data-search="a-9 索引"><a href="/prototypes/preview/A-9.html"><span class="code">A-9</span><span class="label">索引</span></a></li>
+      <li data-search="a-10 更新履歴と更新方針"><a href="/prototypes/preview/A-10.html"><span class="code">A-10</span><span class="label">更新履歴と更新方針</span></a></li>
+      <li data-search="a-11 略称表記"><a href="/prototypes/preview/A-11.html"><span class="code">A-11</span><span class="label">略称表記</span></a></li>
     </ul>
     <h3>B</h3>
     <ul class="grid">
-      <li data-search="b-1 gemini"><span class="code">B-1</span><a href="/prototypes/preview/B-1.html">Gemini</a></li>
-      <li data-search="b-2 claude"><span class="code">B-2</span><a href="/prototypes/preview/B-2.html">Claude</a></li>
-      <li data-search="b-3 chatgpt"><span class="code">B-3</span><a href="/prototypes/preview/B-3.html">ChatGPT</a></li>
-      <li data-search="b-4 cursor"><span class="code">B-4</span><a href="/prototypes/preview/B-4.html">Cursor</a></li>
-      <li data-search="b-5 github copilot"><span class="code">B-5</span><a href="/prototypes/preview/B-5.html">GitHub Copilot</a></li>
-      <li data-search="b-6 windsurf"><span class="code">B-6</span><a href="/prototypes/preview/B-6.html">Windsurf</a></li>
-      <li data-search="b-7 claude code"><span class="code">B-7</span><a href="/prototypes/preview/B-7.html">Claude Code</a></li>
-      <li data-search="b-8 codex"><span class="code">B-8</span><a href="/prototypes/preview/B-8.html">Codex</a></li>
-      <li data-search="b-9 v0"><span class="code">B-9</span><a href="/prototypes/preview/B-9.html">v0</a></li>
-      <li data-search="b-10 devin"><span class="code">B-10</span><a href="/prototypes/preview/B-10.html">Devin</a></li>
-      <li data-search="b-11 bolt.new"><span class="code">B-11</span><a href="/prototypes/preview/B-11.html">Bolt.new</a></li>
-      <li data-search="b-12 perplexity"><span class="code">B-12</span><a href="/prototypes/preview/B-12.html">Perplexity</a></li>
-      <li data-search="b-13 elevenlabs"><span class="code">B-13</span><a href="/prototypes/preview/B-13.html">ElevenLabs</a></li>
-      <li data-search="b-14 genspark"><span class="code">B-14</span><a href="/prototypes/preview/B-14.html">Genspark</a></li>
-      <li data-search="b-15 microsoft copilot"><span class="code">B-15</span><a href="/prototypes/preview/B-15.html">Microsoft Copilot</a></li>
-      <li data-search="b-16 microsoft 365 copilot"><span class="code">B-16</span><a href="/prototypes/preview/B-16.html">Microsoft 365 Copilot</a></li>
-      <li data-search="b-17 edge copilot"><span class="code">B-17</span><a href="/prototypes/preview/B-17.html">Edge Copilot</a></li>
-      <li data-search="b-18 aqua voice"><span class="code">B-18</span><a href="/prototypes/preview/B-18.html">Aqua Voice</a></li>
-      <li data-search="b-19 claude cowork"><span class="code">B-19</span><a href="/prototypes/preview/B-19.html">Claude Cowork</a></li>
-      <li data-search="b-20 vercel"><span class="code">B-20</span><a href="/prototypes/preview/B-20.html">Vercel</a></li>
-      <li data-search="b-21 netlify"><span class="code">B-21</span><a href="/prototypes/preview/B-21.html">Netlify</a></li>
-      <li data-search="b-22 cloudflare"><span class="code">B-22</span><a href="/prototypes/preview/B-22.html">Cloudflare</a></li>
-      <li data-search="b-23 aws"><span class="code">B-23</span><a href="/prototypes/preview/B-23.html">AWS</a></li>
-      <li data-search="b-24 google cloud"><span class="code">B-24</span><a href="/prototypes/preview/B-24.html">Google Cloud</a></li>
-      <li data-search="b-25 azure"><span class="code">B-25</span><a href="/prototypes/preview/B-25.html">Azure</a></li>
-      <li data-search="b-26 azure openai"><span class="code">B-26</span><a href="/prototypes/preview/B-26.html">Azure OpenAI</a></li>
-      <li data-search="b-27 vertex ai"><span class="code">B-27</span><a href="/prototypes/preview/B-27.html">Vertex AI</a></li>
-      <li data-search="b-28 render"><span class="code">B-28</span><a href="/prototypes/preview/B-28.html">Render</a></li>
-      <li data-search="b-29 supabase"><span class="code">B-29</span><a href="/prototypes/preview/B-29.html">Supabase</a></li>
-      <li data-search="b-30 amazon bedrock"><span class="code">B-30</span><a href="/prototypes/preview/B-30.html">Amazon Bedrock</a></li>
-      <li data-search="b-31 excalidraw"><span class="code">B-31</span><a href="/prototypes/preview/B-31.html">Excalidraw</a></li>
-      <li data-search="b-32 figma"><span class="code">B-32</span><a href="/prototypes/preview/B-32.html">Figma</a></li>
-      <li data-search="b-33 canva"><span class="code">B-33</span><a href="/prototypes/preview/B-33.html">Canva</a></li>
-      <li data-search="b-34 notebooklm"><span class="code">B-34</span><a href="/prototypes/preview/B-34.html">NotebookLM</a></li>
-      <li data-search="b-35 gemini cli"><span class="code">B-35</span><a href="/prototypes/preview/B-35.html">Gemini CLI</a></li>
-      <li data-search="b-36 lovable"><span class="code">B-36</span><a href="/prototypes/preview/B-36.html">Lovable</a></li>
-      <li data-search="b-37 replit"><span class="code">B-37</span><a href="/prototypes/preview/B-37.html">Replit</a></li>
-      <li data-search="b-38 manus"><span class="code">B-38</span><a href="/prototypes/preview/B-38.html">Manus</a></li>
-      <li data-search="b-39 google ai studio"><span class="code">B-39</span><a href="/prototypes/preview/B-39.html">Google AI Studio</a></li>
-      <li data-search="b-40 reddit"><span class="code">B-40</span><a href="/prototypes/preview/B-40.html">Reddit</a></li>
-      <li data-search="b-41 arxiv"><span class="code">B-41</span><a href="/prototypes/preview/B-41.html">arXiv</a></li>
-      <li data-search="b-42 discord"><span class="code">B-42</span><a href="/prototypes/preview/B-42.html">Discord</a></li>
-      <li data-search="b-43 n8n・dify"><span class="code">B-43</span><a href="/prototypes/preview/B-43.html">n8n・Dify</a></li>
-      <li data-search="b-50 claude の料金プラン"><span class="code">B-50</span><a href="/prototypes/preview/B-50.html">Claude の料金プラン</a></li>
-      <li data-search="b-51 chatgpt の料金プラン"><span class="code">B-51</span><a href="/prototypes/preview/B-51.html">ChatGPT の料金プラン</a></li>
-      <li data-search="b-52 gemini の料金プラン"><span class="code">B-52</span><a href="/prototypes/preview/B-52.html">Gemini の料金プラン</a></li>
-      <li data-search="b-60 suno"><span class="code">B-60</span><a href="/prototypes/preview/B-60.html">Suno</a></li>
-      <li data-search="b-61 ace-step 1.5"><span class="code">B-61</span><a href="/prototypes/preview/B-61.html">ACE-Step 1.5</a></li>
-      <li data-search="bc_compare b/c 系列比較 - バイブコーディング図鑑"><a href="/prototypes/preview/bc_compare.html">B/C 系列比較 - バイブコーディング図鑑</a></li>
+      <li data-search="b-1 gemini"><a href="/prototypes/preview/B-1.html"><span class="code">B-1</span><span class="label">Gemini</span></a></li>
+      <li data-search="b-2 claude"><a href="/prototypes/preview/B-2.html"><span class="code">B-2</span><span class="label">Claude</span></a></li>
+      <li data-search="b-3 chatgpt"><a href="/prototypes/preview/B-3.html"><span class="code">B-3</span><span class="label">ChatGPT</span></a></li>
+      <li data-search="b-4 cursor"><a href="/prototypes/preview/B-4.html"><span class="code">B-4</span><span class="label">Cursor</span></a></li>
+      <li data-search="b-5 github copilot"><a href="/prototypes/preview/B-5.html"><span class="code">B-5</span><span class="label">GitHub Copilot</span></a></li>
+      <li data-search="b-6 windsurf"><a href="/prototypes/preview/B-6.html"><span class="code">B-6</span><span class="label">Windsurf</span></a></li>
+      <li data-search="b-7 claude code"><a href="/prototypes/preview/B-7.html"><span class="code">B-7</span><span class="label">Claude Code</span></a></li>
+      <li data-search="b-8 codex"><a href="/prototypes/preview/B-8.html"><span class="code">B-8</span><span class="label">Codex</span></a></li>
+      <li data-search="b-9 v0"><a href="/prototypes/preview/B-9.html"><span class="code">B-9</span><span class="label">v0</span></a></li>
+      <li data-search="b-10 devin"><a href="/prototypes/preview/B-10.html"><span class="code">B-10</span><span class="label">Devin</span></a></li>
+      <li data-search="b-11 bolt.new"><a href="/prototypes/preview/B-11.html"><span class="code">B-11</span><span class="label">Bolt.new</span></a></li>
+      <li data-search="b-12 perplexity"><a href="/prototypes/preview/B-12.html"><span class="code">B-12</span><span class="label">Perplexity</span></a></li>
+      <li data-search="b-13 elevenlabs"><a href="/prototypes/preview/B-13.html"><span class="code">B-13</span><span class="label">ElevenLabs</span></a></li>
+      <li data-search="b-14 genspark"><a href="/prototypes/preview/B-14.html"><span class="code">B-14</span><span class="label">Genspark</span></a></li>
+      <li data-search="b-15 microsoft copilot"><a href="/prototypes/preview/B-15.html"><span class="code">B-15</span><span class="label">Microsoft Copilot</span></a></li>
+      <li data-search="b-16 microsoft 365 copilot"><a href="/prototypes/preview/B-16.html"><span class="code">B-16</span><span class="label">Microsoft 365 Copilot</span></a></li>
+      <li data-search="b-17 edge copilot"><a href="/prototypes/preview/B-17.html"><span class="code">B-17</span><span class="label">Edge Copilot</span></a></li>
+      <li data-search="b-18 aqua voice"><a href="/prototypes/preview/B-18.html"><span class="code">B-18</span><span class="label">Aqua Voice</span></a></li>
+      <li data-search="b-19 claude cowork"><a href="/prototypes/preview/B-19.html"><span class="code">B-19</span><span class="label">Claude Cowork</span></a></li>
+      <li data-search="b-20 vercel"><a href="/prototypes/preview/B-20.html"><span class="code">B-20</span><span class="label">Vercel</span></a></li>
+      <li data-search="b-21 netlify"><a href="/prototypes/preview/B-21.html"><span class="code">B-21</span><span class="label">Netlify</span></a></li>
+      <li data-search="b-22 cloudflare"><a href="/prototypes/preview/B-22.html"><span class="code">B-22</span><span class="label">Cloudflare</span></a></li>
+      <li data-search="b-23 aws"><a href="/prototypes/preview/B-23.html"><span class="code">B-23</span><span class="label">AWS</span></a></li>
+      <li data-search="b-24 google cloud"><a href="/prototypes/preview/B-24.html"><span class="code">B-24</span><span class="label">Google Cloud</span></a></li>
+      <li data-search="b-25 azure"><a href="/prototypes/preview/B-25.html"><span class="code">B-25</span><span class="label">Azure</span></a></li>
+      <li data-search="b-26 azure openai"><a href="/prototypes/preview/B-26.html"><span class="code">B-26</span><span class="label">Azure OpenAI</span></a></li>
+      <li data-search="b-27 vertex ai"><a href="/prototypes/preview/B-27.html"><span class="code">B-27</span><span class="label">Vertex AI</span></a></li>
+      <li data-search="b-28 render"><a href="/prototypes/preview/B-28.html"><span class="code">B-28</span><span class="label">Render</span></a></li>
+      <li data-search="b-29 supabase"><a href="/prototypes/preview/B-29.html"><span class="code">B-29</span><span class="label">Supabase</span></a></li>
+      <li data-search="b-30 amazon bedrock"><a href="/prototypes/preview/B-30.html"><span class="code">B-30</span><span class="label">Amazon Bedrock</span></a></li>
+      <li data-search="b-31 excalidraw"><a href="/prototypes/preview/B-31.html"><span class="code">B-31</span><span class="label">Excalidraw</span></a></li>
+      <li data-search="b-32 figma"><a href="/prototypes/preview/B-32.html"><span class="code">B-32</span><span class="label">Figma</span></a></li>
+      <li data-search="b-33 canva"><a href="/prototypes/preview/B-33.html"><span class="code">B-33</span><span class="label">Canva</span></a></li>
+      <li data-search="b-34 notebooklm"><a href="/prototypes/preview/B-34.html"><span class="code">B-34</span><span class="label">NotebookLM</span></a></li>
+      <li data-search="b-35 gemini cli"><a href="/prototypes/preview/B-35.html"><span class="code">B-35</span><span class="label">Gemini CLI</span></a></li>
+      <li data-search="b-36 lovable"><a href="/prototypes/preview/B-36.html"><span class="code">B-36</span><span class="label">Lovable</span></a></li>
+      <li data-search="b-37 replit"><a href="/prototypes/preview/B-37.html"><span class="code">B-37</span><span class="label">Replit</span></a></li>
+      <li data-search="b-38 manus"><a href="/prototypes/preview/B-38.html"><span class="code">B-38</span><span class="label">Manus</span></a></li>
+      <li data-search="b-39 google ai studio"><a href="/prototypes/preview/B-39.html"><span class="code">B-39</span><span class="label">Google AI Studio</span></a></li>
+      <li data-search="b-40 reddit"><a href="/prototypes/preview/B-40.html"><span class="code">B-40</span><span class="label">Reddit</span></a></li>
+      <li data-search="b-41 arxiv"><a href="/prototypes/preview/B-41.html"><span class="code">B-41</span><span class="label">arXiv</span></a></li>
+      <li data-search="b-42 discord"><a href="/prototypes/preview/B-42.html"><span class="code">B-42</span><span class="label">Discord</span></a></li>
+      <li data-search="b-43 n8n・dify"><a href="/prototypes/preview/B-43.html"><span class="code">B-43</span><span class="label">n8n・Dify</span></a></li>
+      <li data-search="b-50 claude の料金プラン"><a href="/prototypes/preview/B-50.html"><span class="code">B-50</span><span class="label">Claude の料金プラン</span></a></li>
+      <li data-search="b-51 chatgpt の料金プラン"><a href="/prototypes/preview/B-51.html"><span class="code">B-51</span><span class="label">ChatGPT の料金プラン</span></a></li>
+      <li data-search="b-52 gemini の料金プラン"><a href="/prototypes/preview/B-52.html"><span class="code">B-52</span><span class="label">Gemini の料金プラン</span></a></li>
+      <li data-search="b-60 suno"><a href="/prototypes/preview/B-60.html"><span class="code">B-60</span><span class="label">Suno</span></a></li>
+      <li data-search="b-61 ace-step 1.5"><a href="/prototypes/preview/B-61.html"><span class="code">B-61</span><span class="label">ACE-Step 1.5</span></a></li>
+      <li data-search="bc_compare b/c 系列比較 - バイブコーディング図鑑"><a href="/prototypes/preview/bc_compare.html"><span class="code"></span><span class="label">B/C 系列比較 - バイブコーディング図鑑</span></a></li>
     </ul>
     <h3>C</h3>
     <ul class="grid">
-      <li data-search="c-1 openai"><span class="code">C-1</span><a href="/prototypes/preview/C-1.html">OpenAI</a></li>
-      <li data-search="c-2 anthropic"><span class="code">C-2</span><a href="/prototypes/preview/C-2.html">Anthropic</a></li>
-      <li data-search="c-3 google deepmind"><span class="code">C-3</span><a href="/prototypes/preview/C-3.html">Google DeepMind</a></li>
-      <li data-search="c-4 meta ai"><span class="code">C-4</span><a href="/prototypes/preview/C-4.html">Meta AI</a></li>
-      <li data-search="c-5 xai"><span class="code">C-5</span><a href="/prototypes/preview/C-5.html">xAI</a></li>
-      <li data-search="c-6 mistral ai"><span class="code">C-6</span><a href="/prototypes/preview/C-6.html">Mistral AI</a></li>
-      <li data-search="c-7 hugging face"><span class="code">C-7</span><a href="/prototypes/preview/C-7.html">Hugging Face</a></li>
-      <li data-search="c-8 microsoft ai"><span class="code">C-8</span><a href="/prototypes/preview/C-8.html">Microsoft AI</a></li>
-      <li data-search="c-9 nvidia"><span class="code">C-9</span><a href="/prototypes/preview/C-9.html">NVIDIA</a></li>
-      <li data-search="c-10 moonshot ai"><span class="code">C-10</span><a href="/prototypes/preview/C-10.html">Moonshot AI</a></li>
-      <li data-search="c-11 z.ai"><span class="code">C-11</span><a href="/prototypes/preview/C-11.html">Z.ai</a></li>
-      <li data-search="c-12 tsmc"><span class="code">C-12</span><a href="/prototypes/preview/C-12.html">TSMC</a></li>
-      <li data-search="c-13 groq"><span class="code">C-13</span><a href="/prototypes/preview/C-13.html">Groq</a></li>
-      <li data-search="c-14 amd"><span class="code">C-14</span><a href="/prototypes/preview/C-14.html">AMD</a></li>
-      <li data-search="c-15 intel"><span class="code">C-15</span><a href="/prototypes/preview/C-15.html">Intel</a></li>
-      <li data-search="c-16 deepseek"><span class="code">C-16</span><a href="/prototypes/preview/C-16.html">DeepSeek</a></li>
-      <li data-search="c-17 sakana ai"><span class="code">C-17</span><a href="/prototypes/preview/C-17.html">Sakana AI</a></li>
-      <li data-search="c-50 sam altman"><span class="code">C-50</span><a href="/prototypes/preview/C-50.html">Sam Altman</a></li>
-      <li data-search="c-51 dario amodei"><span class="code">C-51</span><a href="/prototypes/preview/C-51.html">Dario Amodei</a></li>
-      <li data-search="c-52 demis hassabis"><span class="code">C-52</span><a href="/prototypes/preview/C-52.html">Demis Hassabis</a></li>
-      <li data-search="c-53 andrej karpathy"><span class="code">C-53</span><a href="/prototypes/preview/C-53.html">Andrej Karpathy</a></li>
-      <li data-search="c-54 ilya sutskever"><span class="code">C-54</span><a href="/prototypes/preview/C-54.html">Ilya Sutskever</a></li>
-      <li data-search="c-55 mira murati"><span class="code">C-55</span><a href="/prototypes/preview/C-55.html">Mira Murati</a></li>
-      <li data-search="c-56 yann lecun"><span class="code">C-56</span><a href="/prototypes/preview/C-56.html">Yann LeCun</a></li>
-      <li data-search="c-57 geoffrey hinton"><span class="code">C-57</span><a href="/prototypes/preview/C-57.html">Geoffrey Hinton</a></li>
-      <li data-search="c-58 elon musk"><span class="code">C-58</span><a href="/prototypes/preview/C-58.html">Elon Musk</a></li>
-      <li data-search="c-59 jensen huang"><span class="code">C-59</span><a href="/prototypes/preview/C-59.html">Jensen Huang</a></li>
-      <li data-search="c-60 ray kurzweil"><span class="code">C-60</span><a href="/prototypes/preview/C-60.html">Ray Kurzweil</a></li>
-      <li data-search="c-80 ai大学"><span class="code">C-80</span><a href="/prototypes/preview/C-80.html">AI大学</a></li>
-      <li data-search="c-81 にゃんた"><span class="code">C-81</span><a href="/prototypes/preview/C-81.html">にゃんた</a></li>
-      <li data-search="c-82 まさお"><span class="code">C-82</span><a href="/prototypes/preview/C-82.html">まさお</a></li>
-      <li data-search="c-83 ai時代の羅針盤"><span class="code">C-83</span><a href="/prototypes/preview/C-83.html">AI時代の羅針盤</a></li>
+      <li data-search="c-1 openai"><a href="/prototypes/preview/C-1.html"><span class="code">C-1</span><span class="label">OpenAI</span></a></li>
+      <li data-search="c-2 anthropic"><a href="/prototypes/preview/C-2.html"><span class="code">C-2</span><span class="label">Anthropic</span></a></li>
+      <li data-search="c-3 google deepmind"><a href="/prototypes/preview/C-3.html"><span class="code">C-3</span><span class="label">Google DeepMind</span></a></li>
+      <li data-search="c-4 meta ai"><a href="/prototypes/preview/C-4.html"><span class="code">C-4</span><span class="label">Meta AI</span></a></li>
+      <li data-search="c-5 xai"><a href="/prototypes/preview/C-5.html"><span class="code">C-5</span><span class="label">xAI</span></a></li>
+      <li data-search="c-6 mistral ai"><a href="/prototypes/preview/C-6.html"><span class="code">C-6</span><span class="label">Mistral AI</span></a></li>
+      <li data-search="c-7 hugging face"><a href="/prototypes/preview/C-7.html"><span class="code">C-7</span><span class="label">Hugging Face</span></a></li>
+      <li data-search="c-8 microsoft ai"><a href="/prototypes/preview/C-8.html"><span class="code">C-8</span><span class="label">Microsoft AI</span></a></li>
+      <li data-search="c-9 nvidia"><a href="/prototypes/preview/C-9.html"><span class="code">C-9</span><span class="label">NVIDIA</span></a></li>
+      <li data-search="c-10 moonshot ai"><a href="/prototypes/preview/C-10.html"><span class="code">C-10</span><span class="label">Moonshot AI</span></a></li>
+      <li data-search="c-11 z.ai"><a href="/prototypes/preview/C-11.html"><span class="code">C-11</span><span class="label">Z.ai</span></a></li>
+      <li data-search="c-12 tsmc"><a href="/prototypes/preview/C-12.html"><span class="code">C-12</span><span class="label">TSMC</span></a></li>
+      <li data-search="c-13 groq"><a href="/prototypes/preview/C-13.html"><span class="code">C-13</span><span class="label">Groq</span></a></li>
+      <li data-search="c-14 amd"><a href="/prototypes/preview/C-14.html"><span class="code">C-14</span><span class="label">AMD</span></a></li>
+      <li data-search="c-15 intel"><a href="/prototypes/preview/C-15.html"><span class="code">C-15</span><span class="label">Intel</span></a></li>
+      <li data-search="c-16 deepseek"><a href="/prototypes/preview/C-16.html"><span class="code">C-16</span><span class="label">DeepSeek</span></a></li>
+      <li data-search="c-17 sakana ai"><a href="/prototypes/preview/C-17.html"><span class="code">C-17</span><span class="label">Sakana AI</span></a></li>
+      <li data-search="c-50 sam altman"><a href="/prototypes/preview/C-50.html"><span class="code">C-50</span><span class="label">Sam Altman</span></a></li>
+      <li data-search="c-51 dario amodei"><a href="/prototypes/preview/C-51.html"><span class="code">C-51</span><span class="label">Dario Amodei</span></a></li>
+      <li data-search="c-52 demis hassabis"><a href="/prototypes/preview/C-52.html"><span class="code">C-52</span><span class="label">Demis Hassabis</span></a></li>
+      <li data-search="c-53 andrej karpathy"><a href="/prototypes/preview/C-53.html"><span class="code">C-53</span><span class="label">Andrej Karpathy</span></a></li>
+      <li data-search="c-54 ilya sutskever"><a href="/prototypes/preview/C-54.html"><span class="code">C-54</span><span class="label">Ilya Sutskever</span></a></li>
+      <li data-search="c-55 mira murati"><a href="/prototypes/preview/C-55.html"><span class="code">C-55</span><span class="label">Mira Murati</span></a></li>
+      <li data-search="c-56 yann lecun"><a href="/prototypes/preview/C-56.html"><span class="code">C-56</span><span class="label">Yann LeCun</span></a></li>
+      <li data-search="c-57 geoffrey hinton"><a href="/prototypes/preview/C-57.html"><span class="code">C-57</span><span class="label">Geoffrey Hinton</span></a></li>
+      <li data-search="c-58 elon musk"><a href="/prototypes/preview/C-58.html"><span class="code">C-58</span><span class="label">Elon Musk</span></a></li>
+      <li data-search="c-59 jensen huang"><a href="/prototypes/preview/C-59.html"><span class="code">C-59</span><span class="label">Jensen Huang</span></a></li>
+      <li data-search="c-60 ray kurzweil"><a href="/prototypes/preview/C-60.html"><span class="code">C-60</span><span class="label">Ray Kurzweil</span></a></li>
+      <li data-search="c-80 ai大学"><a href="/prototypes/preview/C-80.html"><span class="code">C-80</span><span class="label">AI大学</span></a></li>
+      <li data-search="c-81 にゃんた"><a href="/prototypes/preview/C-81.html"><span class="code">C-81</span><span class="label">にゃんた</span></a></li>
+      <li data-search="c-82 まさお"><a href="/prototypes/preview/C-82.html"><span class="code">C-82</span><span class="label">まさお</span></a></li>
+      <li data-search="c-83 ai時代の羅針盤"><a href="/prototypes/preview/C-83.html"><span class="code">C-83</span><span class="label">AI時代の羅針盤</span></a></li>
     </ul>
     <h3>D</h3>
     <ul class="grid">
-      <li data-search="d-1 gemini 2 系"><span class="code">D-1</span><a href="/prototypes/preview/D-1.html">Gemini 2 系</a></li>
-      <li data-search="d-2 gemini 2.5 系"><span class="code">D-2</span><a href="/prototypes/preview/D-2.html">Gemini 2.5 系</a></li>
-      <li data-search="d-3 gemini 3 系"><span class="code">D-3</span><a href="/prototypes/preview/D-3.html">Gemini 3 系</a></li>
-      <li data-search="d-4 gemini 3.1 系"><span class="code">D-4</span><a href="/prototypes/preview/D-4.html">Gemini 3.1 系</a></li>
-      <li data-search="d-10 claude 3 系"><span class="code">D-10</span><a href="/prototypes/preview/D-10.html">Claude 3 系</a></li>
-      <li data-search="d-11 claude 3.5 系"><span class="code">D-11</span><a href="/prototypes/preview/D-11.html">Claude 3.5 系</a></li>
-      <li data-search="d-12 claude 4 系"><span class="code">D-12</span><a href="/prototypes/preview/D-12.html">Claude 4 系</a></li>
-      <li data-search="d-13 claude 4.5 系"><span class="code">D-13</span><a href="/prototypes/preview/D-13.html">Claude 4.5 系</a></li>
-      <li data-search="d-14 claude mythos preview"><span class="code">D-14</span><a href="/prototypes/preview/D-14.html">Claude Mythos Preview</a></li>
-      <li data-search="d-20 gpt-5 系"><span class="code">D-20</span><a href="/prototypes/preview/D-20.html">GPT-5 系</a></li>
-      <li data-search="d-21 gpt-4 系"><span class="code">D-21</span><a href="/prototypes/preview/D-21.html">GPT-4 系</a></li>
-      <li data-search="d-22 o1 系"><span class="code">D-22</span><a href="/prototypes/preview/D-22.html">o1 系</a></li>
-      <li data-search="d-23 o3 系"><span class="code">D-23</span><a href="/prototypes/preview/D-23.html">o3 系</a></li>
-      <li data-search="d-24 gpt-3 系"><span class="code">D-24</span><a href="/prototypes/preview/D-24.html">GPT-3 系</a></li>
-      <li data-search="d-25 gpt-1 / gpt-2 系"><span class="code">D-25</span><a href="/prototypes/preview/D-25.html">GPT-1 / GPT-2 系</a></li>
-      <li data-search="d-26 gpt-oss"><span class="code">D-26</span><a href="/prototypes/preview/D-26.html">gpt-oss</a></li>
-      <li data-search="d-30 grok 系"><span class="code">D-30</span><a href="/prototypes/preview/D-30.html">Grok 系</a></li>
-      <li data-search="d-35 cursor composer"><span class="code">D-35</span><a href="/prototypes/preview/D-35.html">Cursor Composer</a></li>
-      <li data-search="d-40 llama 系"><span class="code">D-40</span><a href="/prototypes/preview/D-40.html">Llama 系</a></li>
-      <li data-search="d-41 mistral 系"><span class="code">D-41</span><a href="/prototypes/preview/D-41.html">Mistral 系</a></li>
-      <li data-search="d-42 gemma 系"><span class="code">D-42</span><a href="/prototypes/preview/D-42.html">Gemma 系</a></li>
-      <li data-search="d-43 qwen 系"><span class="code">D-43</span><a href="/prototypes/preview/D-43.html">Qwen 系</a></li>
-      <li data-search="d-44 kimi"><span class="code">D-44</span><a href="/prototypes/preview/D-44.html">Kimi</a></li>
-      <li data-search="d-45 glm"><span class="code">D-45</span><a href="/prototypes/preview/D-45.html">GLM</a></li>
-      <li data-search="d-46 deepseek v3"><span class="code">D-46</span><a href="/prototypes/preview/D-46.html">DeepSeek V3</a></li>
-      <li data-search="d-47 deepseek r1"><span class="code">D-47</span><a href="/prototypes/preview/D-47.html">DeepSeek R1</a></li>
-      <li data-search="d-50 dall-e"><span class="code">D-50</span><a href="/prototypes/preview/D-50.html">DALL-E</a></li>
-      <li data-search="d-51 imagen"><span class="code">D-51</span><a href="/prototypes/preview/D-51.html">Imagen</a></li>
-      <li data-search="d-52 sora"><span class="code">D-52</span><a href="/prototypes/preview/D-52.html">Sora</a></li>
-      <li data-search="d-53 veo"><span class="code">D-53</span><a href="/prototypes/preview/D-53.html">Veo</a></li>
-      <li data-search="d-54 stable diffusion"><span class="code">D-54</span><a href="/prototypes/preview/D-54.html">Stable Diffusion</a></li>
-      <li data-search="d-55 nano banana"><span class="code">D-55</span><a href="/prototypes/preview/D-55.html">Nano Banana</a></li>
-      <li data-search="d-56 seedance"><span class="code">D-56</span><a href="/prototypes/preview/D-56.html">Seedance</a></li>
-      <li data-search="d-57 flow"><span class="code">D-57</span><a href="/prototypes/preview/D-57.html">Flow</a></li>
-      <li data-search="d-58 whisk"><span class="code">D-58</span><a href="/prototypes/preview/D-58.html">Whisk</a></li>
-      <li data-search="d-59 midjourney"><span class="code">D-59</span><a href="/prototypes/preview/D-59.html">Midjourney</a></li>
-      <li data-search="d-60 alphago"><span class="code">D-60</span><a href="/prototypes/preview/D-60.html">AlphaGo</a></li>
-      <li data-search="d-61 alphafold"><span class="code">D-61</span><a href="/prototypes/preview/D-61.html">AlphaFold</a></li>
-      <li data-search="d-70 amical"><span class="code">D-70</span><a href="/prototypes/preview/D-70.html">Amical</a></li>
-      <li data-search="d-71 whisper"><span class="code">D-71</span><a href="/prototypes/preview/D-71.html">Whisper</a></li>
+      <li data-search="d-1 gemini 2 系"><a href="/prototypes/preview/D-1.html"><span class="code">D-1</span><span class="label">Gemini 2 系</span></a></li>
+      <li data-search="d-2 gemini 2.5 系"><a href="/prototypes/preview/D-2.html"><span class="code">D-2</span><span class="label">Gemini 2.5 系</span></a></li>
+      <li data-search="d-3 gemini 3 系"><a href="/prototypes/preview/D-3.html"><span class="code">D-3</span><span class="label">Gemini 3 系</span></a></li>
+      <li data-search="d-4 gemini 3.1 系"><a href="/prototypes/preview/D-4.html"><span class="code">D-4</span><span class="label">Gemini 3.1 系</span></a></li>
+      <li data-search="d-10 claude 3 系"><a href="/prototypes/preview/D-10.html"><span class="code">D-10</span><span class="label">Claude 3 系</span></a></li>
+      <li data-search="d-11 claude 3.5 系"><a href="/prototypes/preview/D-11.html"><span class="code">D-11</span><span class="label">Claude 3.5 系</span></a></li>
+      <li data-search="d-12 claude 4 系"><a href="/prototypes/preview/D-12.html"><span class="code">D-12</span><span class="label">Claude 4 系</span></a></li>
+      <li data-search="d-13 claude 4.5 系"><a href="/prototypes/preview/D-13.html"><span class="code">D-13</span><span class="label">Claude 4.5 系</span></a></li>
+      <li data-search="d-14 claude mythos preview"><a href="/prototypes/preview/D-14.html"><span class="code">D-14</span><span class="label">Claude Mythos Preview</span></a></li>
+      <li data-search="d-20 gpt-5 系"><a href="/prototypes/preview/D-20.html"><span class="code">D-20</span><span class="label">GPT-5 系</span></a></li>
+      <li data-search="d-21 gpt-4 系"><a href="/prototypes/preview/D-21.html"><span class="code">D-21</span><span class="label">GPT-4 系</span></a></li>
+      <li data-search="d-22 o1 系"><a href="/prototypes/preview/D-22.html"><span class="code">D-22</span><span class="label">o1 系</span></a></li>
+      <li data-search="d-23 o3 系"><a href="/prototypes/preview/D-23.html"><span class="code">D-23</span><span class="label">o3 系</span></a></li>
+      <li data-search="d-24 gpt-3 系"><a href="/prototypes/preview/D-24.html"><span class="code">D-24</span><span class="label">GPT-3 系</span></a></li>
+      <li data-search="d-25 gpt-1 / gpt-2 系"><a href="/prototypes/preview/D-25.html"><span class="code">D-25</span><span class="label">GPT-1 / GPT-2 系</span></a></li>
+      <li data-search="d-26 gpt-oss"><a href="/prototypes/preview/D-26.html"><span class="code">D-26</span><span class="label">gpt-oss</span></a></li>
+      <li data-search="d-30 grok 系"><a href="/prototypes/preview/D-30.html"><span class="code">D-30</span><span class="label">Grok 系</span></a></li>
+      <li data-search="d-35 cursor composer"><a href="/prototypes/preview/D-35.html"><span class="code">D-35</span><span class="label">Cursor Composer</span></a></li>
+      <li data-search="d-40 llama 系"><a href="/prototypes/preview/D-40.html"><span class="code">D-40</span><span class="label">Llama 系</span></a></li>
+      <li data-search="d-41 mistral 系"><a href="/prototypes/preview/D-41.html"><span class="code">D-41</span><span class="label">Mistral 系</span></a></li>
+      <li data-search="d-42 gemma 系"><a href="/prototypes/preview/D-42.html"><span class="code">D-42</span><span class="label">Gemma 系</span></a></li>
+      <li data-search="d-43 qwen 系"><a href="/prototypes/preview/D-43.html"><span class="code">D-43</span><span class="label">Qwen 系</span></a></li>
+      <li data-search="d-44 kimi"><a href="/prototypes/preview/D-44.html"><span class="code">D-44</span><span class="label">Kimi</span></a></li>
+      <li data-search="d-45 glm"><a href="/prototypes/preview/D-45.html"><span class="code">D-45</span><span class="label">GLM</span></a></li>
+      <li data-search="d-46 deepseek v3"><a href="/prototypes/preview/D-46.html"><span class="code">D-46</span><span class="label">DeepSeek V3</span></a></li>
+      <li data-search="d-47 deepseek r1"><a href="/prototypes/preview/D-47.html"><span class="code">D-47</span><span class="label">DeepSeek R1</span></a></li>
+      <li data-search="d-50 dall-e"><a href="/prototypes/preview/D-50.html"><span class="code">D-50</span><span class="label">DALL-E</span></a></li>
+      <li data-search="d-51 imagen"><a href="/prototypes/preview/D-51.html"><span class="code">D-51</span><span class="label">Imagen</span></a></li>
+      <li data-search="d-52 sora"><a href="/prototypes/preview/D-52.html"><span class="code">D-52</span><span class="label">Sora</span></a></li>
+      <li data-search="d-53 veo"><a href="/prototypes/preview/D-53.html"><span class="code">D-53</span><span class="label">Veo</span></a></li>
+      <li data-search="d-54 stable diffusion"><a href="/prototypes/preview/D-54.html"><span class="code">D-54</span><span class="label">Stable Diffusion</span></a></li>
+      <li data-search="d-55 nano banana"><a href="/prototypes/preview/D-55.html"><span class="code">D-55</span><span class="label">Nano Banana</span></a></li>
+      <li data-search="d-56 seedance"><a href="/prototypes/preview/D-56.html"><span class="code">D-56</span><span class="label">Seedance</span></a></li>
+      <li data-search="d-57 flow"><a href="/prototypes/preview/D-57.html"><span class="code">D-57</span><span class="label">Flow</span></a></li>
+      <li data-search="d-58 whisk"><a href="/prototypes/preview/D-58.html"><span class="code">D-58</span><span class="label">Whisk</span></a></li>
+      <li data-search="d-59 midjourney"><a href="/prototypes/preview/D-59.html"><span class="code">D-59</span><span class="label">Midjourney</span></a></li>
+      <li data-search="d-60 alphago"><a href="/prototypes/preview/D-60.html"><span class="code">D-60</span><span class="label">AlphaGo</span></a></li>
+      <li data-search="d-61 alphafold"><a href="/prototypes/preview/D-61.html"><span class="code">D-61</span><span class="label">AlphaFold</span></a></li>
+      <li data-search="d-70 amical"><a href="/prototypes/preview/D-70.html"><span class="code">D-70</span><span class="label">Amical</span></a></li>
+      <li data-search="d-71 whisper"><a href="/prototypes/preview/D-71.html"><span class="code">D-71</span><span class="label">Whisper</span></a></li>
     </ul>
     <h3>E</h3>
     <ul class="grid">
-      <li data-search="e-1 swe-bench"><span class="code">E-1</span><a href="/prototypes/preview/E-1.html">SWE-Bench</a></li>
-      <li data-search="e-2 swe-bench verified"><span class="code">E-2</span><a href="/prototypes/preview/E-2.html">SWE-Bench Verified</a></li>
-      <li data-search="e-3 terminal-bench"><span class="code">E-3</span><a href="/prototypes/preview/E-3.html">Terminal-Bench</a></li>
-      <li data-search="e-4 humaneval"><span class="code">E-4</span><a href="/prototypes/preview/E-4.html">HumanEval</a></li>
-      <li data-search="e-20 mmlu"><span class="code">E-20</span><a href="/prototypes/preview/E-20.html">MMLU</a></li>
-      <li data-search="e-21 mmlu-pro"><span class="code">E-21</span><a href="/prototypes/preview/E-21.html">MMLU-Pro</a></li>
-      <li data-search="e-22 gpqa"><span class="code">E-22</span><a href="/prototypes/preview/E-22.html">GPQA</a></li>
-      <li data-search="e-23 gsm8k"><span class="code">E-23</span><a href="/prototypes/preview/E-23.html">GSM8K</a></li>
-      <li data-search="e-24 math"><span class="code">E-24</span><a href="/prototypes/preview/E-24.html">MATH</a></li>
-      <li data-search="e-25 aime"><span class="code">E-25</span><a href="/prototypes/preview/E-25.html">AIME</a></li>
-      <li data-search="e-26 humanity&amp;#x27;s last exam"><span class="code">E-26</span><a href="/prototypes/preview/E-26.html">Humanity&amp;#x27;s Last Exam</a></li>
-      <li data-search="e-27 iq bench"><span class="code">E-27</span><a href="/prototypes/preview/E-27.html">IQ Bench</a></li>
-      <li data-search="e-28 arc-agi"><span class="code">E-28</span><a href="/prototypes/preview/E-28.html">ARC-AGI</a></li>
-      <li data-search="e-30 tau-bench"><span class="code">E-30</span><a href="/prototypes/preview/E-30.html">TAU-Bench</a></li>
-      <li data-search="e-31 webarena"><span class="code">E-31</span><a href="/prototypes/preview/E-31.html">WebArena</a></li>
-      <li data-search="e-32 gaia"><span class="code">E-32</span><a href="/prototypes/preview/E-32.html">GAIA</a></li>
-      <li data-search="e-33 agentbench"><span class="code">E-33</span><a href="/prototypes/preview/E-33.html">AgentBench</a></li>
-      <li data-search="e-34 osworld"><span class="code">E-34</span><a href="/prototypes/preview/E-34.html">OSWorld</a></li>
-      <li data-search="e-50 chatbot arena"><span class="code">E-50</span><a href="/prototypes/preview/E-50.html">Chatbot Arena</a></li>
-      <li data-search="e-51 lmsys arena"><span class="code">E-51</span><a href="/prototypes/preview/E-51.html">LMSYS Arena</a></li>
+      <li data-search="e-1 swe-bench"><a href="/prototypes/preview/E-1.html"><span class="code">E-1</span><span class="label">SWE-Bench</span></a></li>
+      <li data-search="e-2 swe-bench verified"><a href="/prototypes/preview/E-2.html"><span class="code">E-2</span><span class="label">SWE-Bench Verified</span></a></li>
+      <li data-search="e-3 terminal-bench"><a href="/prototypes/preview/E-3.html"><span class="code">E-3</span><span class="label">Terminal-Bench</span></a></li>
+      <li data-search="e-4 humaneval"><a href="/prototypes/preview/E-4.html"><span class="code">E-4</span><span class="label">HumanEval</span></a></li>
+      <li data-search="e-20 mmlu"><a href="/prototypes/preview/E-20.html"><span class="code">E-20</span><span class="label">MMLU</span></a></li>
+      <li data-search="e-21 mmlu-pro"><a href="/prototypes/preview/E-21.html"><span class="code">E-21</span><span class="label">MMLU-Pro</span></a></li>
+      <li data-search="e-22 gpqa"><a href="/prototypes/preview/E-22.html"><span class="code">E-22</span><span class="label">GPQA</span></a></li>
+      <li data-search="e-23 gsm8k"><a href="/prototypes/preview/E-23.html"><span class="code">E-23</span><span class="label">GSM8K</span></a></li>
+      <li data-search="e-24 math"><a href="/prototypes/preview/E-24.html"><span class="code">E-24</span><span class="label">MATH</span></a></li>
+      <li data-search="e-25 aime"><a href="/prototypes/preview/E-25.html"><span class="code">E-25</span><span class="label">AIME</span></a></li>
+      <li data-search="e-26 humanity&amp;#x27;s last exam"><a href="/prototypes/preview/E-26.html"><span class="code">E-26</span><span class="label">Humanity&amp;#x27;s Last Exam</span></a></li>
+      <li data-search="e-27 iq bench"><a href="/prototypes/preview/E-27.html"><span class="code">E-27</span><span class="label">IQ Bench</span></a></li>
+      <li data-search="e-28 arc-agi"><a href="/prototypes/preview/E-28.html"><span class="code">E-28</span><span class="label">ARC-AGI</span></a></li>
+      <li data-search="e-30 tau-bench"><a href="/prototypes/preview/E-30.html"><span class="code">E-30</span><span class="label">TAU-Bench</span></a></li>
+      <li data-search="e-31 webarena"><a href="/prototypes/preview/E-31.html"><span class="code">E-31</span><span class="label">WebArena</span></a></li>
+      <li data-search="e-32 gaia"><a href="/prototypes/preview/E-32.html"><span class="code">E-32</span><span class="label">GAIA</span></a></li>
+      <li data-search="e-33 agentbench"><a href="/prototypes/preview/E-33.html"><span class="code">E-33</span><span class="label">AgentBench</span></a></li>
+      <li data-search="e-34 osworld"><a href="/prototypes/preview/E-34.html"><span class="code">E-34</span><span class="label">OSWorld</span></a></li>
+      <li data-search="e-50 chatbot arena"><a href="/prototypes/preview/E-50.html"><span class="code">E-50</span><span class="label">Chatbot Arena</span></a></li>
+      <li data-search="e-51 lmsys arena"><a href="/prototypes/preview/E-51.html"><span class="code">E-51</span><span class="label">LMSYS Arena</span></a></li>
     </ul>
     <h3>F</h3>
     <ul class="grid">
-      <li data-search="f-1 javascript"><span class="code">F-1</span><a href="/prototypes/preview/F-1.html">JavaScript</a></li>
-      <li data-search="f-2 typescript"><span class="code">F-2</span><a href="/prototypes/preview/F-2.html">TypeScript</a></li>
-      <li data-search="f-3 python"><span class="code">F-3</span><a href="/prototypes/preview/F-3.html">Python</a></li>
-      <li data-search="f-4 html"><span class="code">F-4</span><a href="/prototypes/preview/F-4.html">HTML</a></li>
-      <li data-search="f-5 css"><span class="code">F-5</span><a href="/prototypes/preview/F-5.html">CSS</a></li>
-      <li data-search="f-6 markdown"><span class="code">F-6</span><a href="/prototypes/preview/F-6.html">Markdown</a></li>
-      <li data-search="f-7 yaml"><span class="code">F-7</span><a href="/prototypes/preview/F-7.html">YAML</a></li>
-      <li data-search="f-8 json"><span class="code">F-8</span><a href="/prototypes/preview/F-8.html">JSON</a></li>
-      <li data-search="f-9 svg"><span class="code">F-9</span><a href="/prototypes/preview/F-9.html">SVG</a></li>
-      <li data-search="f-10 react"><span class="code">F-10</span><a href="/prototypes/preview/F-10.html">React</a></li>
-      <li data-search="f-11 next.js"><span class="code">F-11</span><a href="/prototypes/preview/F-11.html">Next.js</a></li>
-      <li data-search="f-12 electron"><span class="code">F-12</span><a href="/prototypes/preview/F-12.html">Electron</a></li>
-      <li data-search="f-13 tauri"><span class="code">F-13</span><a href="/prototypes/preview/F-13.html">Tauri</a></li>
-      <li data-search="f-14 three.js"><span class="code">F-14</span><a href="/prototypes/preview/F-14.html">three.js</a></li>
-      <li data-search="f-15 shadcn/ui"><span class="code">F-15</span><a href="/prototypes/preview/F-15.html">shadcn/ui</a></li>
-      <li data-search="f-16 tailwind css"><span class="code">F-16</span><a href="/prototypes/preview/F-16.html">Tailwind CSS</a></li>
-      <li data-search="f-17 astro"><span class="code">F-17</span><a href="/prototypes/preview/F-17.html">Astro</a></li>
-      <li data-search="f-18 フレームワーク／ライブラリ"><span class="code">F-18</span><a href="/prototypes/preview/F-18.html">フレームワーク／ライブラリ</a></li>
-      <li data-search="f-20 eslint"><span class="code">F-20</span><a href="/prototypes/preview/F-20.html">ESLint</a></li>
-      <li data-search="f-21 prettier"><span class="code">F-21</span><a href="/prototypes/preview/F-21.html">Prettier</a></li>
-      <li data-search="f-30 vs code"><span class="code">F-30</span><a href="/prototypes/preview/F-30.html">VS Code</a></li>
-      <li data-search="f-34 vs code 拡張機能"><span class="code">F-34</span><a href="/prototypes/preview/F-34.html">VS Code 拡張機能</a></li>
-      <li data-search="f-35 markdown preview enhanced"><span class="code">F-35</span><a href="/prototypes/preview/F-35.html">Markdown Preview Enhanced</a></li>
-      <li data-search="f-36 git graph"><span class="code">F-36</span><a href="/prototypes/preview/F-36.html">Git Graph</a></li>
-      <li data-search="f-37 japanese language pack for vs code"><span class="code">F-37</span><a href="/prototypes/preview/F-37.html">Japanese Language Pack for VS Code</a></li>
-      <li data-search="f-38 markdown all in one"><span class="code">F-38</span><a href="/prototypes/preview/F-38.html">Markdown All in One</a></li>
-      <li data-search="f-40 npm"><span class="code">F-40</span><a href="/prototypes/preview/F-40.html">npm</a></li>
-      <li data-search="f-41 vite"><span class="code">F-41</span><a href="/prototypes/preview/F-41.html">Vite</a></li>
-      <li data-search="f-42 ビルド"><span class="code">F-42</span><a href="/prototypes/preview/F-42.html">ビルド</a></li>
-      <li data-search="f-43 テスト"><span class="code">F-43</span><a href="/prototypes/preview/F-43.html">テスト</a></li>
-      <li data-search="f-44 pnpm"><span class="code">F-44</span><a href="/prototypes/preview/F-44.html">pnpm</a></li>
-      <li data-search="f-45 デプロイ"><span class="code">F-45</span><a href="/prototypes/preview/F-45.html">デプロイ</a></li>
-      <li data-search="f-46 デバッグ"><span class="code">F-46</span><a href="/prototypes/preview/F-46.html">デバッグ</a></li>
-      <li data-search="f-47 フロントエンド／バックエンド"><span class="code">F-47</span><a href="/prototypes/preview/F-47.html">フロントエンド／バックエンド</a></li>
-      <li data-search="f-50 git"><span class="code">F-50</span><a href="/prototypes/preview/F-50.html">git</a></li>
-      <li data-search="f-51 git push"><span class="code">F-51</span><a href="/prototypes/preview/F-51.html">git push</a></li>
-      <li data-search="f-52 git pull"><span class="code">F-52</span><a href="/prototypes/preview/F-52.html">git pull</a></li>
-      <li data-search="f-53 branch"><span class="code">F-53</span><a href="/prototypes/preview/F-53.html">branch</a></li>
-      <li data-search="f-54 commit"><span class="code">F-54</span><a href="/prototypes/preview/F-54.html">commit</a></li>
-      <li data-search="f-55 merge"><span class="code">F-55</span><a href="/prototypes/preview/F-55.html">merge</a></li>
-      <li data-search="f-56 .gitignore"><span class="code">F-56</span><a href="/prototypes/preview/F-56.html">.gitignore</a></li>
-      <li data-search="f-57 リポジトリ"><span class="code">F-57</span><a href="/prototypes/preview/F-57.html">リポジトリ</a></li>
-      <li data-search="f-58 git stash"><span class="code">F-58</span><a href="/prototypes/preview/F-58.html">git stash</a></li>
-      <li data-search="f-59 readme.md"><span class="code">F-59</span><a href="/prototypes/preview/F-59.html">README.md</a></li>
-      <li data-search="f-60 github"><span class="code">F-60</span><a href="/prototypes/preview/F-60.html">GitHub</a></li>
-      <li data-search="f-61 pull request"><span class="code">F-61</span><a href="/prototypes/preview/F-61.html">Pull Request</a></li>
-      <li data-search="f-62 github actions"><span class="code">F-62</span><a href="/prototypes/preview/F-62.html">GitHub Actions</a></li>
-      <li data-search="f-71 ripgrep (rg)"><span class="code">F-71</span><a href="/prototypes/preview/F-71.html">ripgrep (rg)</a></li>
-      <li data-search="f-80 node.js"><span class="code">F-80</span><a href="/prototypes/preview/F-80.html">Node.js</a></li>
-      <li data-search="f-81 bash"><span class="code">F-81</span><a href="/prototypes/preview/F-81.html">bash</a></li>
-      <li data-search="f-82 wsl"><span class="code">F-82</span><a href="/prototypes/preview/F-82.html">WSL</a></li>
-      <li data-search="f-83 powershell"><span class="code">F-83</span><a href="/prototypes/preview/F-83.html">PowerShell</a></li>
-      <li data-search="f-84 ghostty"><span class="code">F-84</span><a href="/prototypes/preview/F-84.html">Ghostty</a></li>
-      <li data-search="f-85 superclaude framework"><span class="code">F-85</span><a href="/prototypes/preview/F-85.html">SuperClaude Framework</a></li>
-      <li data-search="f-86 ollama"><span class="code">F-86</span><a href="/prototypes/preview/F-86.html">ollama</a></li>
-      <li data-search="f-87 sudo"><span class="code">F-87</span><a href="/prototypes/preview/F-87.html">sudo</a></li>
-      <li data-search="f-90 docker"><span class="code">F-90</span><a href="/prototypes/preview/F-90.html">Docker</a></li>
-      <li data-search="f-91 .env"><span class="code">F-91</span><a href="/prototypes/preview/F-91.html">.env</a></li>
-      <li data-search="f-100 拡張子早見表"><span class="code">F-100</span><a href="/prototypes/preview/F-100.html">拡張子早見表</a></li>
-      <li data-search="f-101 .ico"><span class="code">F-101</span><a href="/prototypes/preview/F-101.html">.ico</a></li>
-      <li data-search="f-102 .mp4"><span class="code">F-102</span><a href="/prototypes/preview/F-102.html">.mp4</a></li>
-      <li data-search="f-103 .mp3"><span class="code">F-103</span><a href="/prototypes/preview/F-103.html">.mp3</a></li>
-      <li data-search="f-104 .webp"><span class="code">F-104</span><a href="/prototypes/preview/F-104.html">.webp</a></li>
-      <li data-search="f-110 lighthouse"><span class="code">F-110</span><a href="/prototypes/preview/F-110.html">Lighthouse</a></li>
-      <li data-search="f-111 a11y"><span class="code">F-111</span><a href="/prototypes/preview/F-111.html">a11y</a></li>
-      <li data-search="f-120 postgresql"><span class="code">F-120</span><a href="/prototypes/preview/F-120.html">PostgreSQL</a></li>
-      <li data-search="f-121 sqlite"><span class="code">F-121</span><a href="/prototypes/preview/F-121.html">SQLite</a></li>
-      <li data-search="f-122 prisma"><span class="code">F-122</span><a href="/prototypes/preview/F-122.html">Prisma</a></li>
-      <li data-search="f-123 orm"><span class="code">F-123</span><a href="/prototypes/preview/F-123.html">ORM</a></li>
-      <li data-search="f-130 oauth"><span class="code">F-130</span><a href="/prototypes/preview/F-130.html">OAuth</a></li>
-      <li data-search="f-140 mermaid"><span class="code">F-140</span><a href="/prototypes/preview/F-140.html">Mermaid</a></li>
-      <li data-search="f-141 plantuml"><span class="code">F-141</span><a href="/prototypes/preview/F-141.html">PlantUML</a></li>
-      <li data-search="f-150 mit ライセンス"><span class="code">F-150</span><a href="/prototypes/preview/F-150.html">MIT ライセンス</a></li>
-      <li data-search="f-151 apache 2.0"><span class="code">F-151</span><a href="/prototypes/preview/F-151.html">Apache 2.0</a></li>
-      <li data-search="f-152 gpl"><span class="code">F-152</span><a href="/prototypes/preview/F-152.html">GPL</a></li>
-      <li data-search="f-153 creative commons"><span class="code">F-153</span><a href="/prototypes/preview/F-153.html">Creative Commons</a></li>
-      <li data-search="f-154 oss"><span class="code">F-154</span><a href="/prototypes/preview/F-154.html">OSS</a></li>
-      <li data-search="f-160 dom"><span class="code">F-160</span><a href="/prototypes/preview/F-160.html">DOM</a></li>
-      <li data-search="f-161 ssr"><span class="code">F-161</span><a href="/prototypes/preview/F-161.html">SSR</a></li>
-      <li data-search="f-162 ssg"><span class="code">F-162</span><a href="/prototypes/preview/F-162.html">SSG</a></li>
-      <li data-search="f-170 ec2"><span class="code">F-170</span><a href="/prototypes/preview/F-170.html">EC2</a></li>
-      <li data-search="f-171 s3"><span class="code">F-171</span><a href="/prototypes/preview/F-171.html">S3</a></li>
-      <li data-search="f-172 iam"><span class="code">F-172</span><a href="/prototypes/preview/F-172.html">IAM</a></li>
-      <li data-search="f-180 opengl"><span class="code">F-180</span><a href="/prototypes/preview/F-180.html">OpenGL</a></li>
-      <li data-search="f-181 webgl"><span class="code">F-181</span><a href="/prototypes/preview/F-181.html">WebGL</a></li>
-      <li data-search="f-190 サブルーチン"><span class="code">F-190</span><a href="/prototypes/preview/F-190.html">サブルーチン</a></li>
-      <li data-search="f-200 rust"><span class="code">F-200</span><a href="/prototypes/preview/F-200.html">Rust</a></li>
-      <li data-search="f-210 json schema"><span class="code">F-210</span><a href="/prototypes/preview/F-210.html">JSON Schema</a></li>
-      <li data-search="f-211 zod"><span class="code">F-211</span><a href="/prototypes/preview/F-211.html">Zod</a></li>
-      <li data-search="f-212 openapi"><span class="code">F-212</span><a href="/prototypes/preview/F-212.html">OpenAPI</a></li>
-      <li data-search="f-213 api"><span class="code">F-213</span><a href="/prototypes/preview/F-213.html">API</a></li>
-      <li data-search="f-214 api キー"><span class="code">F-214</span><a href="/prototypes/preview/F-214.html">API キー</a></li>
+      <li data-search="f-1 javascript"><a href="/prototypes/preview/F-1.html"><span class="code">F-1</span><span class="label">JavaScript</span></a></li>
+      <li data-search="f-2 typescript"><a href="/prototypes/preview/F-2.html"><span class="code">F-2</span><span class="label">TypeScript</span></a></li>
+      <li data-search="f-3 python"><a href="/prototypes/preview/F-3.html"><span class="code">F-3</span><span class="label">Python</span></a></li>
+      <li data-search="f-4 html"><a href="/prototypes/preview/F-4.html"><span class="code">F-4</span><span class="label">HTML</span></a></li>
+      <li data-search="f-5 css"><a href="/prototypes/preview/F-5.html"><span class="code">F-5</span><span class="label">CSS</span></a></li>
+      <li data-search="f-6 markdown"><a href="/prototypes/preview/F-6.html"><span class="code">F-6</span><span class="label">Markdown</span></a></li>
+      <li data-search="f-7 yaml"><a href="/prototypes/preview/F-7.html"><span class="code">F-7</span><span class="label">YAML</span></a></li>
+      <li data-search="f-8 json"><a href="/prototypes/preview/F-8.html"><span class="code">F-8</span><span class="label">JSON</span></a></li>
+      <li data-search="f-9 svg"><a href="/prototypes/preview/F-9.html"><span class="code">F-9</span><span class="label">SVG</span></a></li>
+      <li data-search="f-10 react"><a href="/prototypes/preview/F-10.html"><span class="code">F-10</span><span class="label">React</span></a></li>
+      <li data-search="f-11 next.js"><a href="/prototypes/preview/F-11.html"><span class="code">F-11</span><span class="label">Next.js</span></a></li>
+      <li data-search="f-12 electron"><a href="/prototypes/preview/F-12.html"><span class="code">F-12</span><span class="label">Electron</span></a></li>
+      <li data-search="f-13 tauri"><a href="/prototypes/preview/F-13.html"><span class="code">F-13</span><span class="label">Tauri</span></a></li>
+      <li data-search="f-14 three.js"><a href="/prototypes/preview/F-14.html"><span class="code">F-14</span><span class="label">three.js</span></a></li>
+      <li data-search="f-15 shadcn/ui"><a href="/prototypes/preview/F-15.html"><span class="code">F-15</span><span class="label">shadcn/ui</span></a></li>
+      <li data-search="f-16 tailwind css"><a href="/prototypes/preview/F-16.html"><span class="code">F-16</span><span class="label">Tailwind CSS</span></a></li>
+      <li data-search="f-17 astro"><a href="/prototypes/preview/F-17.html"><span class="code">F-17</span><span class="label">Astro</span></a></li>
+      <li data-search="f-18 フレームワーク／ライブラリ"><a href="/prototypes/preview/F-18.html"><span class="code">F-18</span><span class="label">フレームワーク／ライブラリ</span></a></li>
+      <li data-search="f-20 eslint"><a href="/prototypes/preview/F-20.html"><span class="code">F-20</span><span class="label">ESLint</span></a></li>
+      <li data-search="f-21 prettier"><a href="/prototypes/preview/F-21.html"><span class="code">F-21</span><span class="label">Prettier</span></a></li>
+      <li data-search="f-30 vs code"><a href="/prototypes/preview/F-30.html"><span class="code">F-30</span><span class="label">VS Code</span></a></li>
+      <li data-search="f-34 vs code 拡張機能"><a href="/prototypes/preview/F-34.html"><span class="code">F-34</span><span class="label">VS Code 拡張機能</span></a></li>
+      <li data-search="f-35 markdown preview enhanced"><a href="/prototypes/preview/F-35.html"><span class="code">F-35</span><span class="label">Markdown Preview Enhanced</span></a></li>
+      <li data-search="f-36 git graph"><a href="/prototypes/preview/F-36.html"><span class="code">F-36</span><span class="label">Git Graph</span></a></li>
+      <li data-search="f-37 japanese language pack for vs code"><a href="/prototypes/preview/F-37.html"><span class="code">F-37</span><span class="label">Japanese Language Pack for VS Code</span></a></li>
+      <li data-search="f-38 markdown all in one"><a href="/prototypes/preview/F-38.html"><span class="code">F-38</span><span class="label">Markdown All in One</span></a></li>
+      <li data-search="f-40 npm"><a href="/prototypes/preview/F-40.html"><span class="code">F-40</span><span class="label">npm</span></a></li>
+      <li data-search="f-41 vite"><a href="/prototypes/preview/F-41.html"><span class="code">F-41</span><span class="label">Vite</span></a></li>
+      <li data-search="f-42 ビルド"><a href="/prototypes/preview/F-42.html"><span class="code">F-42</span><span class="label">ビルド</span></a></li>
+      <li data-search="f-43 テスト"><a href="/prototypes/preview/F-43.html"><span class="code">F-43</span><span class="label">テスト</span></a></li>
+      <li data-search="f-44 pnpm"><a href="/prototypes/preview/F-44.html"><span class="code">F-44</span><span class="label">pnpm</span></a></li>
+      <li data-search="f-45 デプロイ"><a href="/prototypes/preview/F-45.html"><span class="code">F-45</span><span class="label">デプロイ</span></a></li>
+      <li data-search="f-46 デバッグ"><a href="/prototypes/preview/F-46.html"><span class="code">F-46</span><span class="label">デバッグ</span></a></li>
+      <li data-search="f-47 フロントエンド／バックエンド"><a href="/prototypes/preview/F-47.html"><span class="code">F-47</span><span class="label">フロントエンド／バックエンド</span></a></li>
+      <li data-search="f-50 git"><a href="/prototypes/preview/F-50.html"><span class="code">F-50</span><span class="label">git</span></a></li>
+      <li data-search="f-51 git push"><a href="/prototypes/preview/F-51.html"><span class="code">F-51</span><span class="label">git push</span></a></li>
+      <li data-search="f-52 git pull"><a href="/prototypes/preview/F-52.html"><span class="code">F-52</span><span class="label">git pull</span></a></li>
+      <li data-search="f-53 branch"><a href="/prototypes/preview/F-53.html"><span class="code">F-53</span><span class="label">branch</span></a></li>
+      <li data-search="f-54 commit"><a href="/prototypes/preview/F-54.html"><span class="code">F-54</span><span class="label">commit</span></a></li>
+      <li data-search="f-55 merge"><a href="/prototypes/preview/F-55.html"><span class="code">F-55</span><span class="label">merge</span></a></li>
+      <li data-search="f-56 .gitignore"><a href="/prototypes/preview/F-56.html"><span class="code">F-56</span><span class="label">.gitignore</span></a></li>
+      <li data-search="f-57 リポジトリ"><a href="/prototypes/preview/F-57.html"><span class="code">F-57</span><span class="label">リポジトリ</span></a></li>
+      <li data-search="f-58 git stash"><a href="/prototypes/preview/F-58.html"><span class="code">F-58</span><span class="label">git stash</span></a></li>
+      <li data-search="f-59 readme.md"><a href="/prototypes/preview/F-59.html"><span class="code">F-59</span><span class="label">README.md</span></a></li>
+      <li data-search="f-60 github"><a href="/prototypes/preview/F-60.html"><span class="code">F-60</span><span class="label">GitHub</span></a></li>
+      <li data-search="f-61 pull request"><a href="/prototypes/preview/F-61.html"><span class="code">F-61</span><span class="label">Pull Request</span></a></li>
+      <li data-search="f-62 github actions"><a href="/prototypes/preview/F-62.html"><span class="code">F-62</span><span class="label">GitHub Actions</span></a></li>
+      <li data-search="f-71 ripgrep (rg)"><a href="/prototypes/preview/F-71.html"><span class="code">F-71</span><span class="label">ripgrep (rg)</span></a></li>
+      <li data-search="f-80 node.js"><a href="/prototypes/preview/F-80.html"><span class="code">F-80</span><span class="label">Node.js</span></a></li>
+      <li data-search="f-81 bash"><a href="/prototypes/preview/F-81.html"><span class="code">F-81</span><span class="label">bash</span></a></li>
+      <li data-search="f-82 wsl"><a href="/prototypes/preview/F-82.html"><span class="code">F-82</span><span class="label">WSL</span></a></li>
+      <li data-search="f-83 powershell"><a href="/prototypes/preview/F-83.html"><span class="code">F-83</span><span class="label">PowerShell</span></a></li>
+      <li data-search="f-84 ghostty"><a href="/prototypes/preview/F-84.html"><span class="code">F-84</span><span class="label">Ghostty</span></a></li>
+      <li data-search="f-85 superclaude framework"><a href="/prototypes/preview/F-85.html"><span class="code">F-85</span><span class="label">SuperClaude Framework</span></a></li>
+      <li data-search="f-86 ollama"><a href="/prototypes/preview/F-86.html"><span class="code">F-86</span><span class="label">ollama</span></a></li>
+      <li data-search="f-87 sudo"><a href="/prototypes/preview/F-87.html"><span class="code">F-87</span><span class="label">sudo</span></a></li>
+      <li data-search="f-90 docker"><a href="/prototypes/preview/F-90.html"><span class="code">F-90</span><span class="label">Docker</span></a></li>
+      <li data-search="f-91 .env"><a href="/prototypes/preview/F-91.html"><span class="code">F-91</span><span class="label">.env</span></a></li>
+      <li data-search="f-100 拡張子早見表"><a href="/prototypes/preview/F-100.html"><span class="code">F-100</span><span class="label">拡張子早見表</span></a></li>
+      <li data-search="f-101 .ico"><a href="/prototypes/preview/F-101.html"><span class="code">F-101</span><span class="label">.ico</span></a></li>
+      <li data-search="f-102 .mp4"><a href="/prototypes/preview/F-102.html"><span class="code">F-102</span><span class="label">.mp4</span></a></li>
+      <li data-search="f-103 .mp3"><a href="/prototypes/preview/F-103.html"><span class="code">F-103</span><span class="label">.mp3</span></a></li>
+      <li data-search="f-104 .webp"><a href="/prototypes/preview/F-104.html"><span class="code">F-104</span><span class="label">.webp</span></a></li>
+      <li data-search="f-110 lighthouse"><a href="/prototypes/preview/F-110.html"><span class="code">F-110</span><span class="label">Lighthouse</span></a></li>
+      <li data-search="f-111 a11y"><a href="/prototypes/preview/F-111.html"><span class="code">F-111</span><span class="label">a11y</span></a></li>
+      <li data-search="f-120 postgresql"><a href="/prototypes/preview/F-120.html"><span class="code">F-120</span><span class="label">PostgreSQL</span></a></li>
+      <li data-search="f-121 sqlite"><a href="/prototypes/preview/F-121.html"><span class="code">F-121</span><span class="label">SQLite</span></a></li>
+      <li data-search="f-122 prisma"><a href="/prototypes/preview/F-122.html"><span class="code">F-122</span><span class="label">Prisma</span></a></li>
+      <li data-search="f-123 orm"><a href="/prototypes/preview/F-123.html"><span class="code">F-123</span><span class="label">ORM</span></a></li>
+      <li data-search="f-130 oauth"><a href="/prototypes/preview/F-130.html"><span class="code">F-130</span><span class="label">OAuth</span></a></li>
+      <li data-search="f-140 mermaid"><a href="/prototypes/preview/F-140.html"><span class="code">F-140</span><span class="label">Mermaid</span></a></li>
+      <li data-search="f-141 plantuml"><a href="/prototypes/preview/F-141.html"><span class="code">F-141</span><span class="label">PlantUML</span></a></li>
+      <li data-search="f-150 mit ライセンス"><a href="/prototypes/preview/F-150.html"><span class="code">F-150</span><span class="label">MIT ライセンス</span></a></li>
+      <li data-search="f-151 apache 2.0"><a href="/prototypes/preview/F-151.html"><span class="code">F-151</span><span class="label">Apache 2.0</span></a></li>
+      <li data-search="f-152 gpl"><a href="/prototypes/preview/F-152.html"><span class="code">F-152</span><span class="label">GPL</span></a></li>
+      <li data-search="f-153 creative commons"><a href="/prototypes/preview/F-153.html"><span class="code">F-153</span><span class="label">Creative Commons</span></a></li>
+      <li data-search="f-154 oss"><a href="/prototypes/preview/F-154.html"><span class="code">F-154</span><span class="label">OSS</span></a></li>
+      <li data-search="f-160 dom"><a href="/prototypes/preview/F-160.html"><span class="code">F-160</span><span class="label">DOM</span></a></li>
+      <li data-search="f-161 ssr"><a href="/prototypes/preview/F-161.html"><span class="code">F-161</span><span class="label">SSR</span></a></li>
+      <li data-search="f-162 ssg"><a href="/prototypes/preview/F-162.html"><span class="code">F-162</span><span class="label">SSG</span></a></li>
+      <li data-search="f-170 ec2"><a href="/prototypes/preview/F-170.html"><span class="code">F-170</span><span class="label">EC2</span></a></li>
+      <li data-search="f-171 s3"><a href="/prototypes/preview/F-171.html"><span class="code">F-171</span><span class="label">S3</span></a></li>
+      <li data-search="f-172 iam"><a href="/prototypes/preview/F-172.html"><span class="code">F-172</span><span class="label">IAM</span></a></li>
+      <li data-search="f-180 opengl"><a href="/prototypes/preview/F-180.html"><span class="code">F-180</span><span class="label">OpenGL</span></a></li>
+      <li data-search="f-181 webgl"><a href="/prototypes/preview/F-181.html"><span class="code">F-181</span><span class="label">WebGL</span></a></li>
+      <li data-search="f-190 サブルーチン"><a href="/prototypes/preview/F-190.html"><span class="code">F-190</span><span class="label">サブルーチン</span></a></li>
+      <li data-search="f-200 rust"><a href="/prototypes/preview/F-200.html"><span class="code">F-200</span><span class="label">Rust</span></a></li>
+      <li data-search="f-210 json schema"><a href="/prototypes/preview/F-210.html"><span class="code">F-210</span><span class="label">JSON Schema</span></a></li>
+      <li data-search="f-211 zod"><a href="/prototypes/preview/F-211.html"><span class="code">F-211</span><span class="label">Zod</span></a></li>
+      <li data-search="f-212 openapi"><a href="/prototypes/preview/F-212.html"><span class="code">F-212</span><span class="label">OpenAPI</span></a></li>
+      <li data-search="f-213 api"><a href="/prototypes/preview/F-213.html"><span class="code">F-213</span><span class="label">API</span></a></li>
+      <li data-search="f-214 api キー"><a href="/prototypes/preview/F-214.html"><span class="code">F-214</span><span class="label">API キー</span></a></li>
     </ul>
     <h3>G</h3>
     <ul class="grid">
-      <li data-search="g-1 context (コンテキスト)"><span class="code">G-1</span><a href="/prototypes/preview/G-1.html">Context (コンテキスト)</a></li>
-      <li data-search="g-2 token"><span class="code">G-2</span><a href="/prototypes/preview/G-2.html">Token</a></li>
-      <li data-search="g-3 dictation"><span class="code">G-3</span><a href="/prototypes/preview/G-3.html">Dictation</a></li>
-      <li data-search="g-4 system prompt"><span class="code">G-4</span><a href="/prototypes/preview/G-4.html">System Prompt</a></li>
-      <li data-search="g-5 context window"><span class="code">G-5</span><a href="/prototypes/preview/G-5.html">Context Window</a></li>
-      <li data-search="g-6 one-shot"><span class="code">G-6</span><a href="/prototypes/preview/G-6.html">One-shot</a></li>
-      <li data-search="g-7 指示追従性"><span class="code">G-7</span><a href="/prototypes/preview/G-7.html">指示追従性</a></li>
-      <li data-search="g-8 決定論的／非決定論的"><span class="code">G-8</span><a href="/prototypes/preview/G-8.html">決定論的／非決定論的</a></li>
-      <li data-search="g-9 effort レベル"><span class="code">G-9</span><a href="/prototypes/preview/G-9.html">effort レベル</a></li>
-      <li data-search="g-10 prompt engineering"><span class="code">G-10</span><a href="/prototypes/preview/G-10.html">Prompt Engineering</a></li>
-      <li data-search="g-11 context engineering"><span class="code">G-11</span><a href="/prototypes/preview/G-11.html">Context Engineering</a></li>
-      <li data-search="g-12 agent design"><span class="code">G-12</span><a href="/prototypes/preview/G-12.html">Agent Design</a></li>
-      <li data-search="g-13 few-shot learning"><span class="code">G-13</span><a href="/prototypes/preview/G-13.html">Few-shot Learning</a></li>
-      <li data-search="g-14 thinking モデル"><span class="code">G-14</span><a href="/prototypes/preview/G-14.html">Thinking モデル</a></li>
-      <li data-search="g-15 rag"><span class="code">G-15</span><a href="/prototypes/preview/G-15.html">RAG</a></li>
-      <li data-search="g-16 embedding"><span class="code">G-16</span><a href="/prototypes/preview/G-16.html">Embedding</a></li>
-      <li data-search="g-17 ベクトル db"><span class="code">G-17</span><a href="/prototypes/preview/G-17.html">ベクトル DB</a></li>
-      <li data-search="g-18 chain of thought"><span class="code">G-18</span><a href="/prototypes/preview/G-18.html">Chain of Thought</a></li>
-      <li data-search="g-19 prompt caching"><span class="code">G-19</span><a href="/prototypes/preview/G-19.html">Prompt Caching</a></li>
-      <li data-search="g-20 claude.md"><span class="code">G-20</span><a href="/prototypes/preview/G-20.html">CLAUDE.md</a></li>
-      <li data-search="g-21 agents.md"><span class="code">G-21</span><a href="/prototypes/preview/G-21.html">AGENTS.md</a></li>
-      <li data-search="g-22 skill.md"><span class="code">G-22</span><a href="/prototypes/preview/G-22.html">SKILL.md</a></li>
-      <li data-search="g-23 .claude/settings.json"><span class="code">G-23</span><a href="/prototypes/preview/G-23.html">.claude/settings.json</a></li>
-      <li data-search="g-24 temperature"><span class="code">G-24</span><a href="/prototypes/preview/G-24.html">Temperature</a></li>
-      <li data-search="g-25 ai のメモリ機能"><span class="code">G-25</span><a href="/prototypes/preview/G-25.html">AI のメモリ機能</a></li>
-      <li data-search="g-26 computer use"><span class="code">G-26</span><a href="/prototypes/preview/G-26.html">Computer Use</a></li>
-      <li data-search="g-27 プロンプトインジェクション"><span class="code">G-27</span><a href="/prototypes/preview/G-27.html">プロンプトインジェクション</a></li>
-      <li data-search="g-30 tool use"><span class="code">G-30</span><a href="/prototypes/preview/G-30.html">Tool Use</a></li>
-      <li data-search="g-31 hook"><span class="code">G-31</span><a href="/prototypes/preview/G-31.html">Hook</a></li>
-      <li data-search="g-32 slash command"><span class="code">G-32</span><a href="/prototypes/preview/G-32.html">Slash Command</a></li>
-      <li data-search="g-33 function calling"><span class="code">G-33</span><a href="/prototypes/preview/G-33.html">Function Calling</a></li>
-      <li data-search="g-34 code interpreter"><span class="code">G-34</span><a href="/prototypes/preview/G-34.html">Code Interpreter</a></li>
-      <li data-search="g-35 deep research"><span class="code">G-35</span><a href="/prototypes/preview/G-35.html">Deep Research</a></li>
-      <li data-search="g-36 artifact"><span class="code">G-36</span><a href="/prototypes/preview/G-36.html">Artifact</a></li>
-      <li data-search="g-38 plan mode"><span class="code">G-38</span><a href="/prototypes/preview/G-38.html">Plan Mode</a></li>
-      <li data-search="g-39 permission"><span class="code">G-39</span><a href="/prototypes/preview/G-39.html">Permission</a></li>
-      <li data-search="g-40 バイブコーディング"><span class="code">G-40</span><a href="/prototypes/preview/G-40.html">バイブコーディング</a></li>
-      <li data-search="g-41 subagent"><span class="code">G-41</span><a href="/prototypes/preview/G-41.html">Subagent</a></li>
-      <li data-search="g-42 worktree"><span class="code">G-42</span><a href="/prototypes/preview/G-42.html">Worktree</a></li>
-      <li data-search="g-43 オーケストレーション"><span class="code">G-43</span><a href="/prototypes/preview/G-43.html">オーケストレーション</a></li>
-      <li data-search="g-44 マルチエージェント協調"><span class="code">G-44</span><a href="/prototypes/preview/G-44.html">マルチエージェント協調</a></li>
-      <li data-search="g-45 段階的開示"><span class="code">G-45</span><a href="/prototypes/preview/G-45.html">段階的開示</a></li>
-      <li data-search="g-46 ナーフ（モデルの劣化体感）"><span class="code">G-46</span><a href="/prototypes/preview/G-46.html">ナーフ（モデルの劣化体感）</a></li>
-      <li data-search="g-47 auto-compact"><span class="code">G-47</span><a href="/prototypes/preview/G-47.html">Auto-compact</a></li>
-      <li data-search="g-48 structured outputs"><span class="code">G-48</span><a href="/prototypes/preview/G-48.html">Structured Outputs</a></li>
-      <li data-search="g-49 ai エージェント"><span class="code">G-49</span><a href="/prototypes/preview/G-49.html">AI エージェント</a></li>
-      <li data-search="galley_sample サンプルゲラ"><a href="/prototypes/preview/galley_sample.html">サンプルゲラ</a></li>
+      <li data-search="g-1 context (コンテキスト)"><a href="/prototypes/preview/G-1.html"><span class="code">G-1</span><span class="label">Context (コンテキスト)</span></a></li>
+      <li data-search="g-2 token"><a href="/prototypes/preview/G-2.html"><span class="code">G-2</span><span class="label">Token</span></a></li>
+      <li data-search="g-3 dictation"><a href="/prototypes/preview/G-3.html"><span class="code">G-3</span><span class="label">Dictation</span></a></li>
+      <li data-search="g-4 system prompt"><a href="/prototypes/preview/G-4.html"><span class="code">G-4</span><span class="label">System Prompt</span></a></li>
+      <li data-search="g-5 context window"><a href="/prototypes/preview/G-5.html"><span class="code">G-5</span><span class="label">Context Window</span></a></li>
+      <li data-search="g-6 one-shot"><a href="/prototypes/preview/G-6.html"><span class="code">G-6</span><span class="label">One-shot</span></a></li>
+      <li data-search="g-7 指示追従性"><a href="/prototypes/preview/G-7.html"><span class="code">G-7</span><span class="label">指示追従性</span></a></li>
+      <li data-search="g-8 決定論的／非決定論的"><a href="/prototypes/preview/G-8.html"><span class="code">G-8</span><span class="label">決定論的／非決定論的</span></a></li>
+      <li data-search="g-9 effort レベル"><a href="/prototypes/preview/G-9.html"><span class="code">G-9</span><span class="label">effort レベル</span></a></li>
+      <li data-search="g-10 prompt engineering"><a href="/prototypes/preview/G-10.html"><span class="code">G-10</span><span class="label">Prompt Engineering</span></a></li>
+      <li data-search="g-11 context engineering"><a href="/prototypes/preview/G-11.html"><span class="code">G-11</span><span class="label">Context Engineering</span></a></li>
+      <li data-search="g-12 agent design"><a href="/prototypes/preview/G-12.html"><span class="code">G-12</span><span class="label">Agent Design</span></a></li>
+      <li data-search="g-13 few-shot learning"><a href="/prototypes/preview/G-13.html"><span class="code">G-13</span><span class="label">Few-shot Learning</span></a></li>
+      <li data-search="g-14 thinking モデル"><a href="/prototypes/preview/G-14.html"><span class="code">G-14</span><span class="label">Thinking モデル</span></a></li>
+      <li data-search="g-15 rag"><a href="/prototypes/preview/G-15.html"><span class="code">G-15</span><span class="label">RAG</span></a></li>
+      <li data-search="g-16 embedding"><a href="/prototypes/preview/G-16.html"><span class="code">G-16</span><span class="label">Embedding</span></a></li>
+      <li data-search="g-17 ベクトル db"><a href="/prototypes/preview/G-17.html"><span class="code">G-17</span><span class="label">ベクトル DB</span></a></li>
+      <li data-search="g-18 chain of thought"><a href="/prototypes/preview/G-18.html"><span class="code">G-18</span><span class="label">Chain of Thought</span></a></li>
+      <li data-search="g-19 prompt caching"><a href="/prototypes/preview/G-19.html"><span class="code">G-19</span><span class="label">Prompt Caching</span></a></li>
+      <li data-search="g-20 claude.md"><a href="/prototypes/preview/G-20.html"><span class="code">G-20</span><span class="label">CLAUDE.md</span></a></li>
+      <li data-search="g-21 agents.md"><a href="/prototypes/preview/G-21.html"><span class="code">G-21</span><span class="label">AGENTS.md</span></a></li>
+      <li data-search="g-22 skill.md"><a href="/prototypes/preview/G-22.html"><span class="code">G-22</span><span class="label">SKILL.md</span></a></li>
+      <li data-search="g-23 .claude/settings.json"><a href="/prototypes/preview/G-23.html"><span class="code">G-23</span><span class="label">.claude/settings.json</span></a></li>
+      <li data-search="g-24 temperature"><a href="/prototypes/preview/G-24.html"><span class="code">G-24</span><span class="label">Temperature</span></a></li>
+      <li data-search="g-25 ai のメモリ機能"><a href="/prototypes/preview/G-25.html"><span class="code">G-25</span><span class="label">AI のメモリ機能</span></a></li>
+      <li data-search="g-26 computer use"><a href="/prototypes/preview/G-26.html"><span class="code">G-26</span><span class="label">Computer Use</span></a></li>
+      <li data-search="g-27 プロンプトインジェクション"><a href="/prototypes/preview/G-27.html"><span class="code">G-27</span><span class="label">プロンプトインジェクション</span></a></li>
+      <li data-search="g-30 tool use"><a href="/prototypes/preview/G-30.html"><span class="code">G-30</span><span class="label">Tool Use</span></a></li>
+      <li data-search="g-31 hook"><a href="/prototypes/preview/G-31.html"><span class="code">G-31</span><span class="label">Hook</span></a></li>
+      <li data-search="g-32 slash command"><a href="/prototypes/preview/G-32.html"><span class="code">G-32</span><span class="label">Slash Command</span></a></li>
+      <li data-search="g-33 function calling"><a href="/prototypes/preview/G-33.html"><span class="code">G-33</span><span class="label">Function Calling</span></a></li>
+      <li data-search="g-34 code interpreter"><a href="/prototypes/preview/G-34.html"><span class="code">G-34</span><span class="label">Code Interpreter</span></a></li>
+      <li data-search="g-35 deep research"><a href="/prototypes/preview/G-35.html"><span class="code">G-35</span><span class="label">Deep Research</span></a></li>
+      <li data-search="g-36 artifact"><a href="/prototypes/preview/G-36.html"><span class="code">G-36</span><span class="label">Artifact</span></a></li>
+      <li data-search="g-38 plan mode"><a href="/prototypes/preview/G-38.html"><span class="code">G-38</span><span class="label">Plan Mode</span></a></li>
+      <li data-search="g-39 permission"><a href="/prototypes/preview/G-39.html"><span class="code">G-39</span><span class="label">Permission</span></a></li>
+      <li data-search="g-40 バイブコーディング"><a href="/prototypes/preview/G-40.html"><span class="code">G-40</span><span class="label">バイブコーディング</span></a></li>
+      <li data-search="g-41 subagent"><a href="/prototypes/preview/G-41.html"><span class="code">G-41</span><span class="label">Subagent</span></a></li>
+      <li data-search="g-42 worktree"><a href="/prototypes/preview/G-42.html"><span class="code">G-42</span><span class="label">Worktree</span></a></li>
+      <li data-search="g-43 オーケストレーション"><a href="/prototypes/preview/G-43.html"><span class="code">G-43</span><span class="label">オーケストレーション</span></a></li>
+      <li data-search="g-44 マルチエージェント協調"><a href="/prototypes/preview/G-44.html"><span class="code">G-44</span><span class="label">マルチエージェント協調</span></a></li>
+      <li data-search="g-45 段階的開示"><a href="/prototypes/preview/G-45.html"><span class="code">G-45</span><span class="label">段階的開示</span></a></li>
+      <li data-search="g-46 ナーフ（モデルの劣化体感）"><a href="/prototypes/preview/G-46.html"><span class="code">G-46</span><span class="label">ナーフ（モデルの劣化体感）</span></a></li>
+      <li data-search="g-47 auto-compact"><a href="/prototypes/preview/G-47.html"><span class="code">G-47</span><span class="label">Auto-compact</span></a></li>
+      <li data-search="g-48 structured outputs"><a href="/prototypes/preview/G-48.html"><span class="code">G-48</span><span class="label">Structured Outputs</span></a></li>
+      <li data-search="g-49 ai エージェント"><a href="/prototypes/preview/G-49.html"><span class="code">G-49</span><span class="label">AI エージェント</span></a></li>
+      <li data-search="g-50 evals"><a href="/prototypes/preview/G-50.html"><span class="code">G-50</span><span class="label">Evals</span></a></li>
+      <li data-search="g-51 llm-as-a-judge"><a href="/prototypes/preview/G-51.html"><span class="code">G-51</span><span class="label">LLM-as-a-judge</span></a></li>
+      <li data-search="g-60 graphrag"><a href="/prototypes/preview/G-60.html"><span class="code">G-60</span><span class="label">GraphRAG</span></a></li>
+      <li data-search="g-61 ナレッジグラフ"><a href="/prototypes/preview/G-61.html"><span class="code">G-61</span><span class="label">ナレッジグラフ</span></a></li>
+      <li data-search="g-62 チャンク分割"><a href="/prototypes/preview/G-62.html"><span class="code">G-62</span><span class="label">チャンク分割</span></a></li>
+      <li data-search="g-63 ハイブリッド検索"><a href="/prototypes/preview/G-63.html"><span class="code">G-63</span><span class="label">ハイブリッド検索</span></a></li>
+      <li data-search="g-64 リランキング"><a href="/prototypes/preview/G-64.html"><span class="code">G-64</span><span class="label">リランキング</span></a></li>
+      <li data-search="galley_sample サンプルゲラ"><a href="/prototypes/preview/galley_sample.html"><span class="code"></span><span class="label">サンプルゲラ</span></a></li>
     </ul>
     <h3>H</h3>
     <ul class="grid">
-      <li data-search="h-1 tdd"><span class="code">H-1</span><a href="/prototypes/preview/H-1.html">TDD</a></li>
-      <li data-search="h-2 ペアプログラミング"><span class="code">H-2</span><a href="/prototypes/preview/H-2.html">ペアプログラミング</a></li>
-      <li data-search="h-3 バイブコーディングの流儀"><span class="code">H-3</span><a href="/prototypes/preview/H-3.html">バイブコーディングの流儀</a></li>
-      <li data-search="h-4 コードレビュー"><span class="code">H-4</span><a href="/prototypes/preview/H-4.html">コードレビュー</a></li>
-      <li data-search="h-5 scrum / agile"><span class="code">H-5</span><a href="/prototypes/preview/H-5.html">Scrum / Agile</a></li>
-      <li data-search="h-6 git flow"><span class="code">H-6</span><a href="/prototypes/preview/H-6.html">Git Flow</a></li>
-      <li data-search="h-7 ci/cd"><span class="code">H-7</span><a href="/prototypes/preview/H-7.html">CI/CD</a></li>
-      <li data-search="h-8 devops"><span class="code">H-8</span><a href="/prototypes/preview/H-8.html">DevOps</a></li>
-      <li data-search="h-50 bard → gemini"><span class="code">H-50</span><a href="/prototypes/preview/H-50.html">Bard → Gemini</a></li>
-      <li data-search="h-51 preview から正式版への流れ"><span class="code">H-51</span><a href="/prototypes/preview/H-51.html">Preview から正式版への流れ</a></li>
-      <li data-search="h-52 copilot から claude code までの流れ"><span class="code">H-52</span><a href="/prototypes/preview/H-52.html">Copilot から Claude Code までの流れ</a></li>
-      <li data-search="h-53 chatgpt 登場"><span class="code">H-53</span><a href="/prototypes/preview/H-53.html">ChatGPT 登場</a></li>
-      <li data-search="h-54 gpt-4 リリース"><span class="code">H-54</span><a href="/prototypes/preview/H-54.html">GPT-4 リリース</a></li>
-      <li data-search="h-55 llama のオープン化"><span class="code">H-55</span><a href="/prototypes/preview/H-55.html">LLaMA のオープン化</a></li>
-      <li data-search="h-56 claude のバージョン史"><span class="code">H-56</span><a href="/prototypes/preview/H-56.html">Claude のバージョン史</a></li>
-      <li data-search="h-57 gemini の命名史"><span class="code">H-57</span><a href="/prototypes/preview/H-57.html">Gemini の命名史</a></li>
-      <li data-search="h-58 transformer 論文"><span class="code">H-58</span><a href="/prototypes/preview/H-58.html">Transformer 論文</a></li>
-      <li data-search="h-59 ai エージェント元年"><span class="code">H-59</span><a href="/prototypes/preview/H-59.html">AI エージェント元年</a></li>
-      <li data-search="h-60 codex → github copilot の系譜"><span class="code">H-60</span><a href="/prototypes/preview/H-60.html">Codex → GitHub Copilot の系譜</a></li>
-      <li data-search="h-61 preview 版という文化"><span class="code">H-61</span><a href="/prototypes/preview/H-61.html">Preview 版という文化</a></li>
-      <li data-search="h-62 anthropic 創業の流れ"><span class="code">H-62</span><a href="/prototypes/preview/H-62.html">Anthropic 創業の流れ</a></li>
-      <li data-search="h-63 vibe coding 命名"><span class="code">H-63</span><a href="/prototypes/preview/H-63.html">Vibe Coding 命名</a></li>
-      <li data-search="h-64 deepseek ショック"><span class="code">H-64</span><a href="/prototypes/preview/H-64.html">DeepSeek ショック</a></li>
+      <li data-search="h-1 tdd"><a href="/prototypes/preview/H-1.html"><span class="code">H-1</span><span class="label">TDD</span></a></li>
+      <li data-search="h-2 ペアプログラミング"><a href="/prototypes/preview/H-2.html"><span class="code">H-2</span><span class="label">ペアプログラミング</span></a></li>
+      <li data-search="h-3 バイブコーディングの流儀"><a href="/prototypes/preview/H-3.html"><span class="code">H-3</span><span class="label">バイブコーディングの流儀</span></a></li>
+      <li data-search="h-4 コードレビュー"><a href="/prototypes/preview/H-4.html"><span class="code">H-4</span><span class="label">コードレビュー</span></a></li>
+      <li data-search="h-5 scrum / agile"><a href="/prototypes/preview/H-5.html"><span class="code">H-5</span><span class="label">Scrum / Agile</span></a></li>
+      <li data-search="h-6 git flow"><a href="/prototypes/preview/H-6.html"><span class="code">H-6</span><span class="label">Git Flow</span></a></li>
+      <li data-search="h-7 ci/cd"><a href="/prototypes/preview/H-7.html"><span class="code">H-7</span><span class="label">CI/CD</span></a></li>
+      <li data-search="h-8 devops"><a href="/prototypes/preview/H-8.html"><span class="code">H-8</span><span class="label">DevOps</span></a></li>
+      <li data-search="h-50 bard → gemini"><a href="/prototypes/preview/H-50.html"><span class="code">H-50</span><span class="label">Bard → Gemini</span></a></li>
+      <li data-search="h-51 preview から正式版への流れ"><a href="/prototypes/preview/H-51.html"><span class="code">H-51</span><span class="label">Preview から正式版への流れ</span></a></li>
+      <li data-search="h-52 copilot から claude code までの流れ"><a href="/prototypes/preview/H-52.html"><span class="code">H-52</span><span class="label">Copilot から Claude Code までの流れ</span></a></li>
+      <li data-search="h-53 chatgpt 登場"><a href="/prototypes/preview/H-53.html"><span class="code">H-53</span><span class="label">ChatGPT 登場</span></a></li>
+      <li data-search="h-54 gpt-4 リリース"><a href="/prototypes/preview/H-54.html"><span class="code">H-54</span><span class="label">GPT-4 リリース</span></a></li>
+      <li data-search="h-55 llama のオープン化"><a href="/prototypes/preview/H-55.html"><span class="code">H-55</span><span class="label">LLaMA のオープン化</span></a></li>
+      <li data-search="h-56 claude のバージョン史"><a href="/prototypes/preview/H-56.html"><span class="code">H-56</span><span class="label">Claude のバージョン史</span></a></li>
+      <li data-search="h-57 gemini の命名史"><a href="/prototypes/preview/H-57.html"><span class="code">H-57</span><span class="label">Gemini の命名史</span></a></li>
+      <li data-search="h-58 transformer 論文"><a href="/prototypes/preview/H-58.html"><span class="code">H-58</span><span class="label">Transformer 論文</span></a></li>
+      <li data-search="h-59 ai エージェント元年"><a href="/prototypes/preview/H-59.html"><span class="code">H-59</span><span class="label">AI エージェント元年</span></a></li>
+      <li data-search="h-60 codex → github copilot の系譜"><a href="/prototypes/preview/H-60.html"><span class="code">H-60</span><span class="label">Codex → GitHub Copilot の系譜</span></a></li>
+      <li data-search="h-61 preview 版という文化"><a href="/prototypes/preview/H-61.html"><span class="code">H-61</span><span class="label">Preview 版という文化</span></a></li>
+      <li data-search="h-62 anthropic 創業の流れ"><a href="/prototypes/preview/H-62.html"><span class="code">H-62</span><span class="label">Anthropic 創業の流れ</span></a></li>
+      <li data-search="h-63 vibe coding 命名"><a href="/prototypes/preview/H-63.html"><span class="code">H-63</span><span class="label">Vibe Coding 命名</span></a></li>
+      <li data-search="h-64 deepseek ショック"><a href="/prototypes/preview/H-64.html"><span class="code">H-64</span><span class="label">DeepSeek ショック</span></a></li>
     </ul>
     <h3>I</h3>
     <ul class="grid">
-      <li data-search="i-1 mcp"><span class="code">I-1</span><a href="/prototypes/preview/I-1.html">MCP</a></li>
-      <li data-search="i-2 mcp server"><span class="code">I-2</span><a href="/prototypes/preview/I-2.html">MCP Server</a></li>
-      <li data-search="i-3 mcp client"><span class="code">I-3</span><a href="/prototypes/preview/I-3.html">MCP Client</a></li>
-      <li data-search="i-4 mcp transport"><span class="code">I-4</span><a href="/prototypes/preview/I-4.html">MCP Transport</a></li>
-      <li data-search="i-5 mcp sdk"><span class="code">I-5</span><a href="/prototypes/preview/I-5.html">MCP SDK</a></li>
-      <li data-search="i-10 filesystem mcp"><span class="code">I-10</span><a href="/prototypes/preview/I-10.html">Filesystem MCP</a></li>
-      <li data-search="i-11 github mcp"><span class="code">I-11</span><a href="/prototypes/preview/I-11.html">GitHub MCP</a></li>
-      <li data-search="i-12 git mcp"><span class="code">I-12</span><a href="/prototypes/preview/I-12.html">Git MCP</a></li>
-      <li data-search="i-13 slack mcp"><span class="code">I-13</span><a href="/prototypes/preview/I-13.html">Slack MCP</a></li>
-      <li data-search="i-20 playwright mcp"><span class="code">I-20</span><a href="/prototypes/preview/I-20.html">Playwright MCP</a></li>
-      <li data-search="i-21 puppeteer mcp"><span class="code">I-21</span><a href="/prototypes/preview/I-21.html">Puppeteer MCP</a></li>
-      <li data-search="i-22 chrome devtools mcp"><span class="code">I-22</span><a href="/prototypes/preview/I-22.html">Chrome DevTools MCP</a></li>
-      <li data-search="i-23 serena mcp"><span class="code">I-23</span><a href="/prototypes/preview/I-23.html">Serena MCP</a></li>
-      <li data-search="i-24 context7 mcp"><span class="code">I-24</span><a href="/prototypes/preview/I-24.html">Context7 MCP</a></li>
-      <li data-search="i-30 notion mcp"><span class="code">I-30</span><a href="/prototypes/preview/I-30.html">Notion MCP</a></li>
-      <li data-search="i-41 sqlite mcp"><span class="code">I-41</span><a href="/prototypes/preview/I-41.html">SQLite MCP</a></li>
-      <li data-search="i-50 aws mcp"><span class="code">I-50</span><a href="/prototypes/preview/I-50.html">AWS MCP</a></li>
-      <li data-search="i-80 自作 mcp のテンプレ"><span class="code">I-80</span><a href="/prototypes/preview/I-80.html">自作 MCP のテンプレ</a></li>
-      <li data-search="i-81 mcp の登録・設定"><span class="code">I-81</span><a href="/prototypes/preview/I-81.html">MCP の登録・設定</a></li>
+      <li data-search="i-1 mcp"><a href="/prototypes/preview/I-1.html"><span class="code">I-1</span><span class="label">MCP</span></a></li>
+      <li data-search="i-2 mcp server"><a href="/prototypes/preview/I-2.html"><span class="code">I-2</span><span class="label">MCP Server</span></a></li>
+      <li data-search="i-3 mcp client"><a href="/prototypes/preview/I-3.html"><span class="code">I-3</span><span class="label">MCP Client</span></a></li>
+      <li data-search="i-4 mcp transport"><a href="/prototypes/preview/I-4.html"><span class="code">I-4</span><span class="label">MCP Transport</span></a></li>
+      <li data-search="i-5 mcp sdk"><a href="/prototypes/preview/I-5.html"><span class="code">I-5</span><span class="label">MCP SDK</span></a></li>
+      <li data-search="i-10 filesystem mcp"><a href="/prototypes/preview/I-10.html"><span class="code">I-10</span><span class="label">Filesystem MCP</span></a></li>
+      <li data-search="i-11 github mcp"><a href="/prototypes/preview/I-11.html"><span class="code">I-11</span><span class="label">GitHub MCP</span></a></li>
+      <li data-search="i-12 git mcp"><a href="/prototypes/preview/I-12.html"><span class="code">I-12</span><span class="label">Git MCP</span></a></li>
+      <li data-search="i-13 slack mcp"><a href="/prototypes/preview/I-13.html"><span class="code">I-13</span><span class="label">Slack MCP</span></a></li>
+      <li data-search="i-20 playwright mcp"><a href="/prototypes/preview/I-20.html"><span class="code">I-20</span><span class="label">Playwright MCP</span></a></li>
+      <li data-search="i-21 puppeteer mcp"><a href="/prototypes/preview/I-21.html"><span class="code">I-21</span><span class="label">Puppeteer MCP</span></a></li>
+      <li data-search="i-22 chrome devtools mcp"><a href="/prototypes/preview/I-22.html"><span class="code">I-22</span><span class="label">Chrome DevTools MCP</span></a></li>
+      <li data-search="i-23 serena mcp"><a href="/prototypes/preview/I-23.html"><span class="code">I-23</span><span class="label">Serena MCP</span></a></li>
+      <li data-search="i-24 context7 mcp"><a href="/prototypes/preview/I-24.html"><span class="code">I-24</span><span class="label">Context7 MCP</span></a></li>
+      <li data-search="i-30 notion mcp"><a href="/prototypes/preview/I-30.html"><span class="code">I-30</span><span class="label">Notion MCP</span></a></li>
+      <li data-search="i-41 sqlite mcp"><a href="/prototypes/preview/I-41.html"><span class="code">I-41</span><span class="label">SQLite MCP</span></a></li>
+      <li data-search="i-50 aws mcp"><a href="/prototypes/preview/I-50.html"><span class="code">I-50</span><span class="label">AWS MCP</span></a></li>
+      <li data-search="i-80 自作 mcp のテンプレ"><a href="/prototypes/preview/I-80.html"><span class="code">I-80</span><span class="label">自作 MCP のテンプレ</span></a></li>
+      <li data-search="i-81 mcp の登録・設定"><a href="/prototypes/preview/I-81.html"><span class="code">I-81</span><span class="label">MCP の登録・設定</span></a></li>
     </ul>
     <h3>J</h3>
     <ul class="grid">
-      <li data-search="j-1 agi"><span class="code">J-1</span><a href="/prototypes/preview/J-1.html">AGI</a></li>
-      <li data-search="j-2 強い ai／弱い ai"><span class="code">J-2</span><a href="/prototypes/preview/J-2.html">強い AI／弱い AI</a></li>
-      <li data-search="j-3 singularity"><span class="code">J-3</span><a href="/prototypes/preview/J-3.html">Singularity</a></li>
-      <li data-search="j-4 asi"><span class="code">J-4</span><a href="/prototypes/preview/J-4.html">ASI</a></li>
-      <li data-search="j-5 世界モデル"><span class="code">J-5</span><a href="/prototypes/preview/J-5.html">世界モデル</a></li>
-      <li data-search="j-10 machine learning"><span class="code">J-10</span><a href="/prototypes/preview/J-10.html">Machine Learning</a></li>
-      <li data-search="j-11 deep learning"><span class="code">J-11</span><a href="/prototypes/preview/J-11.html">Deep Learning</a></li>
-      <li data-search="j-12 neural network"><span class="code">J-12</span><a href="/prototypes/preview/J-12.html">Neural Network</a></li>
-      <li data-search="j-13 transformer"><span class="code">J-13</span><a href="/prototypes/preview/J-13.html">Transformer</a></li>
-      <li data-search="j-14 llm"><span class="code">J-14</span><a href="/prototypes/preview/J-14.html">LLM</a></li>
-      <li data-search="j-15 vlm"><span class="code">J-15</span><a href="/prototypes/preview/J-15.html">VLM</a></li>
-      <li data-search="j-16 fine-tuning"><span class="code">J-16</span><a href="/prototypes/preview/J-16.html">Fine-tuning</a></li>
-      <li data-search="j-17 attention"><span class="code">J-17</span><a href="/prototypes/preview/J-17.html">Attention</a></li>
-      <li data-search="j-18 moe"><span class="code">J-18</span><a href="/prototypes/preview/J-18.html">MoE</a></li>
-      <li data-search="j-19 量子化"><span class="code">J-19</span><a href="/prototypes/preview/J-19.html">量子化</a></li>
-      <li data-search="j-20 big data"><span class="code">J-20</span><a href="/prototypes/preview/J-20.html">Big Data</a></li>
-      <li data-search="j-21 lora"><span class="code">J-21</span><a href="/prototypes/preview/J-21.html">LoRA</a></li>
-      <li data-search="j-22 パラメータ数の単位"><span class="code">J-22</span><a href="/prototypes/preview/J-22.html">パラメータ数の単位</a></li>
-      <li data-search="j-23 拡散モデル"><span class="code">J-23</span><a href="/prototypes/preview/J-23.html">拡散モデル</a></li>
-      <li data-search="j-31 第 5 世代コンピュータ"><span class="code">J-31</span><a href="/prototypes/preview/J-31.html">第 5 世代コンピュータ</a></li>
-      <li data-search="j-32 ノイマン型"><span class="code">J-32</span><a href="/prototypes/preview/J-32.html">ノイマン型</a></li>
-      <li data-search="j-33 量子コンピュータ"><span class="code">J-33</span><a href="/prototypes/preview/J-33.html">量子コンピュータ</a></li>
-      <li data-search="j-34 マルチモーダル"><span class="code">J-34</span><a href="/prototypes/preview/J-34.html">マルチモーダル</a></li>
-      <li data-search="j-35 スケーリング則"><span class="code">J-35</span><a href="/prototypes/preview/J-35.html">スケーリング則</a></li>
-      <li data-search="j-36 蒸留"><span class="code">J-36</span><a href="/prototypes/preview/J-36.html">蒸留</a></li>
-      <li data-search="j-38 ムーアの法則"><span class="code">J-38</span><a href="/prototypes/preview/J-38.html">ムーアの法則</a></li>
-      <li data-search="j-40 iot"><span class="code">J-40</span><a href="/prototypes/preview/J-40.html">IoT</a></li>
-      <li data-search="j-41 dx"><span class="code">J-41</span><a href="/prototypes/preview/J-41.html">DX</a></li>
-      <li data-search="j-42 web3"><span class="code">J-42</span><a href="/prototypes/preview/J-42.html">Web3</a></li>
-      <li data-search="j-43 saas"><span class="code">J-43</span><a href="/prototypes/preview/J-43.html">SaaS</a></li>
-      <li data-search="j-50 ai 倫理"><span class="code">J-50</span><a href="/prototypes/preview/J-50.html">AI 倫理</a></li>
-      <li data-search="j-51 hallucination"><span class="code">J-51</span><a href="/prototypes/preview/J-51.html">Hallucination</a></li>
-      <li data-search="j-52 sycophancy"><span class="code">J-52</span><a href="/prototypes/preview/J-52.html">Sycophancy</a></li>
-      <li data-search="j-53 著作権法 30 条の 4（日本）"><span class="code">J-53</span><a href="/prototypes/preview/J-53.html">著作権法 30 条の 4（日本）</a></li>
-      <li data-search="j-54 iso/iec 42001"><span class="code">J-54</span><a href="/prototypes/preview/J-54.html">ISO/IEC 42001</a></li>
-      <li data-search="j-55 個人情報保護法"><span class="code">J-55</span><a href="/prototypes/preview/J-55.html">個人情報保護法</a></li>
-      <li data-search="j-56 gdpr"><span class="code">J-56</span><a href="/prototypes/preview/J-56.html">GDPR</a></li>
-      <li data-search="j-57 rlhf・アラインメント"><span class="code">J-57</span><a href="/prototypes/preview/J-57.html">RLHF・アラインメント</a></li>
-      <li data-search="j-62 チューリングテスト"><span class="code">J-62</span><a href="/prototypes/preview/J-62.html">チューリングテスト</a></li>
-      <li data-search="j-70 vram"><span class="code">J-70</span><a href="/prototypes/preview/J-70.html">VRAM</a></li>
-      <li data-search="j-71 ram"><span class="code">J-71</span><a href="/prototypes/preview/J-71.html">RAM</a></li>
-      <li data-search="j-72 h100"><span class="code">J-72</span><a href="/prototypes/preview/J-72.html">H100</a></li>
-      <li data-search="j-73 blackwell"><span class="code">J-73</span><a href="/prototypes/preview/J-73.html">Blackwell</a></li>
-      <li data-search="j-74 rtx シリーズ"><span class="code">J-74</span><a href="/prototypes/preview/J-74.html">RTX シリーズ</a></li>
-      <li data-search="j-75 tensor コア"><span class="code">J-75</span><a href="/prototypes/preview/J-75.html">Tensor コア</a></li>
-      <li data-search="j-76 cpu"><span class="code">J-76</span><a href="/prototypes/preview/J-76.html">CPU</a></li>
-      <li data-search="j-77 gpu (概念)"><span class="code">J-77</span><a href="/prototypes/preview/J-77.html">GPU (概念)</a></li>
-      <li data-search="j-78 hdd"><span class="code">J-78</span><a href="/prototypes/preview/J-78.html">HDD</a></li>
-      <li data-search="j-79 ssd"><span class="code">J-79</span><a href="/prototypes/preview/J-79.html">SSD</a></li>
-      <li data-search="j-80 sata"><span class="code">J-80</span><a href="/prototypes/preview/J-80.html">SATA</a></li>
-      <li data-search="j-81 m.2"><span class="code">J-81</span><a href="/prototypes/preview/J-81.html">M.2</a></li>
-      <li data-search="j-90 gui"><span class="code">J-90</span><a href="/prototypes/preview/J-90.html">GUI</a></li>
-      <li data-search="j-91 cli"><span class="code">J-91</span><a href="/prototypes/preview/J-91.html">CLI</a></li>
-      <li data-search="j-92 linux"><span class="code">J-92</span><a href="/prototypes/preview/J-92.html">Linux</a></li>
-      <li data-search="j-93 ubuntu"><span class="code">J-93</span><a href="/prototypes/preview/J-93.html">Ubuntu</a></li>
-      <li data-search="j-100 識字（リテラシー）"><span class="code">J-100</span><a href="/prototypes/preview/J-100.html">識字（リテラシー）</a></li>
-      <li data-search="j-103 ループエンジニアリング"><span class="code">J-103</span><a href="/prototypes/preview/J-103.html">ループエンジニアリング</a></li>
-      <li data-search="j-106 ハーネスエンジニアリング"><span class="code">J-106</span><a href="/prototypes/preview/J-106.html">ハーネスエンジニアリング</a></li>
-      <li data-search="j-115 npu・ai pc"><span class="code">J-115</span><a href="/prototypes/preview/J-115.html">NPU・AI PC</a></li>
-      <li data-search="j-116 tpu"><span class="code">J-116</span><a href="/prototypes/preview/J-116.html">TPU</a></li>
-      <li data-search="j-117 データセンターと電力"><span class="code">J-117</span><a href="/prototypes/preview/J-117.html">データセンターと電力</a></li>
-      <li data-search="j-118 グラフエンジニアリング"><span class="code">J-118</span><a href="/prototypes/preview/J-118.html">グラフエンジニアリング</a></li>
+      <li data-search="j-1 agi"><a href="/prototypes/preview/J-1.html"><span class="code">J-1</span><span class="label">AGI</span></a></li>
+      <li data-search="j-2 強い ai／弱い ai"><a href="/prototypes/preview/J-2.html"><span class="code">J-2</span><span class="label">強い AI／弱い AI</span></a></li>
+      <li data-search="j-3 singularity"><a href="/prototypes/preview/J-3.html"><span class="code">J-3</span><span class="label">Singularity</span></a></li>
+      <li data-search="j-4 asi"><a href="/prototypes/preview/J-4.html"><span class="code">J-4</span><span class="label">ASI</span></a></li>
+      <li data-search="j-5 世界モデル"><a href="/prototypes/preview/J-5.html"><span class="code">J-5</span><span class="label">世界モデル</span></a></li>
+      <li data-search="j-6 フィジカル ai"><a href="/prototypes/preview/J-6.html"><span class="code">J-6</span><span class="label">フィジカル AI</span></a></li>
+      <li data-search="j-7 vla"><a href="/prototypes/preview/J-7.html"><span class="code">J-7</span><span class="label">VLA</span></a></li>
+      <li data-search="j-10 machine learning"><a href="/prototypes/preview/J-10.html"><span class="code">J-10</span><span class="label">Machine Learning</span></a></li>
+      <li data-search="j-11 deep learning"><a href="/prototypes/preview/J-11.html"><span class="code">J-11</span><span class="label">Deep Learning</span></a></li>
+      <li data-search="j-12 neural network"><a href="/prototypes/preview/J-12.html"><span class="code">J-12</span><span class="label">Neural Network</span></a></li>
+      <li data-search="j-13 transformer"><a href="/prototypes/preview/J-13.html"><span class="code">J-13</span><span class="label">Transformer</span></a></li>
+      <li data-search="j-14 llm"><a href="/prototypes/preview/J-14.html"><span class="code">J-14</span><span class="label">LLM</span></a></li>
+      <li data-search="j-15 vlm"><a href="/prototypes/preview/J-15.html"><span class="code">J-15</span><span class="label">VLM</span></a></li>
+      <li data-search="j-16 fine-tuning"><a href="/prototypes/preview/J-16.html"><span class="code">J-16</span><span class="label">Fine-tuning</span></a></li>
+      <li data-search="j-17 attention"><a href="/prototypes/preview/J-17.html"><span class="code">J-17</span><span class="label">Attention</span></a></li>
+      <li data-search="j-18 moe"><a href="/prototypes/preview/J-18.html"><span class="code">J-18</span><span class="label">MoE</span></a></li>
+      <li data-search="j-19 量子化"><a href="/prototypes/preview/J-19.html"><span class="code">J-19</span><span class="label">量子化</span></a></li>
+      <li data-search="j-20 big data"><a href="/prototypes/preview/J-20.html"><span class="code">J-20</span><span class="label">Big Data</span></a></li>
+      <li data-search="j-21 lora"><a href="/prototypes/preview/J-21.html"><span class="code">J-21</span><span class="label">LoRA</span></a></li>
+      <li data-search="j-22 パラメータ数の単位"><a href="/prototypes/preview/J-22.html"><span class="code">J-22</span><span class="label">パラメータ数の単位</span></a></li>
+      <li data-search="j-23 拡散モデル"><a href="/prototypes/preview/J-23.html"><span class="code">J-23</span><span class="label">拡散モデル</span></a></li>
+      <li data-search="j-31 第 5 世代コンピュータ"><a href="/prototypes/preview/J-31.html"><span class="code">J-31</span><span class="label">第 5 世代コンピュータ</span></a></li>
+      <li data-search="j-32 ノイマン型"><a href="/prototypes/preview/J-32.html"><span class="code">J-32</span><span class="label">ノイマン型</span></a></li>
+      <li data-search="j-33 量子コンピュータ"><a href="/prototypes/preview/J-33.html"><span class="code">J-33</span><span class="label">量子コンピュータ</span></a></li>
+      <li data-search="j-34 マルチモーダル"><a href="/prototypes/preview/J-34.html"><span class="code">J-34</span><span class="label">マルチモーダル</span></a></li>
+      <li data-search="j-35 スケーリング則"><a href="/prototypes/preview/J-35.html"><span class="code">J-35</span><span class="label">スケーリング則</span></a></li>
+      <li data-search="j-36 蒸留"><a href="/prototypes/preview/J-36.html"><span class="code">J-36</span><span class="label">蒸留</span></a></li>
+      <li data-search="j-38 ムーアの法則"><a href="/prototypes/preview/J-38.html"><span class="code">J-38</span><span class="label">ムーアの法則</span></a></li>
+      <li data-search="j-40 iot"><a href="/prototypes/preview/J-40.html"><span class="code">J-40</span><span class="label">IoT</span></a></li>
+      <li data-search="j-41 dx"><a href="/prototypes/preview/J-41.html"><span class="code">J-41</span><span class="label">DX</span></a></li>
+      <li data-search="j-42 web3"><a href="/prototypes/preview/J-42.html"><span class="code">J-42</span><span class="label">Web3</span></a></li>
+      <li data-search="j-43 saas"><a href="/prototypes/preview/J-43.html"><span class="code">J-43</span><span class="label">SaaS</span></a></li>
+      <li data-search="j-50 ai 倫理"><a href="/prototypes/preview/J-50.html"><span class="code">J-50</span><span class="label">AI 倫理</span></a></li>
+      <li data-search="j-51 hallucination"><a href="/prototypes/preview/J-51.html"><span class="code">J-51</span><span class="label">Hallucination</span></a></li>
+      <li data-search="j-52 sycophancy"><a href="/prototypes/preview/J-52.html"><span class="code">J-52</span><span class="label">Sycophancy</span></a></li>
+      <li data-search="j-53 著作権法 30 条の 4（日本）"><a href="/prototypes/preview/J-53.html"><span class="code">J-53</span><span class="label">著作権法 30 条の 4（日本）</span></a></li>
+      <li data-search="j-54 iso/iec 42001"><a href="/prototypes/preview/J-54.html"><span class="code">J-54</span><span class="label">ISO/IEC 42001</span></a></li>
+      <li data-search="j-55 個人情報保護法"><a href="/prototypes/preview/J-55.html"><span class="code">J-55</span><span class="label">個人情報保護法</span></a></li>
+      <li data-search="j-56 gdpr"><a href="/prototypes/preview/J-56.html"><span class="code">J-56</span><span class="label">GDPR</span></a></li>
+      <li data-search="j-57 rlhf・アラインメント"><a href="/prototypes/preview/J-57.html"><span class="code">J-57</span><span class="label">RLHF・アラインメント</span></a></li>
+      <li data-search="j-58 eu ai act"><a href="/prototypes/preview/J-58.html"><span class="code">J-58</span><span class="label">EU AI Act</span></a></li>
+      <li data-search="j-59 ai 事業者ガイドライン"><a href="/prototypes/preview/J-59.html"><span class="code">J-59</span><span class="label">AI 事業者ガイドライン</span></a></li>
+      <li data-search="j-62 チューリングテスト"><a href="/prototypes/preview/J-62.html"><span class="code">J-62</span><span class="label">チューリングテスト</span></a></li>
+      <li data-search="j-70 vram"><a href="/prototypes/preview/J-70.html"><span class="code">J-70</span><span class="label">VRAM</span></a></li>
+      <li data-search="j-71 ram"><a href="/prototypes/preview/J-71.html"><span class="code">J-71</span><span class="label">RAM</span></a></li>
+      <li data-search="j-72 h100"><a href="/prototypes/preview/J-72.html"><span class="code">J-72</span><span class="label">H100</span></a></li>
+      <li data-search="j-73 blackwell"><a href="/prototypes/preview/J-73.html"><span class="code">J-73</span><span class="label">Blackwell</span></a></li>
+      <li data-search="j-74 rtx シリーズ"><a href="/prototypes/preview/J-74.html"><span class="code">J-74</span><span class="label">RTX シリーズ</span></a></li>
+      <li data-search="j-75 tensor コア"><a href="/prototypes/preview/J-75.html"><span class="code">J-75</span><span class="label">Tensor コア</span></a></li>
+      <li data-search="j-76 cpu"><a href="/prototypes/preview/J-76.html"><span class="code">J-76</span><span class="label">CPU</span></a></li>
+      <li data-search="j-77 gpu (概念)"><a href="/prototypes/preview/J-77.html"><span class="code">J-77</span><span class="label">GPU (概念)</span></a></li>
+      <li data-search="j-78 hdd"><a href="/prototypes/preview/J-78.html"><span class="code">J-78</span><span class="label">HDD</span></a></li>
+      <li data-search="j-79 ssd"><a href="/prototypes/preview/J-79.html"><span class="code">J-79</span><span class="label">SSD</span></a></li>
+      <li data-search="j-80 sata"><a href="/prototypes/preview/J-80.html"><span class="code">J-80</span><span class="label">SATA</span></a></li>
+      <li data-search="j-81 m.2"><a href="/prototypes/preview/J-81.html"><span class="code">J-81</span><span class="label">M.2</span></a></li>
+      <li data-search="j-90 gui"><a href="/prototypes/preview/J-90.html"><span class="code">J-90</span><span class="label">GUI</span></a></li>
+      <li data-search="j-91 cli"><a href="/prototypes/preview/J-91.html"><span class="code">J-91</span><span class="label">CLI</span></a></li>
+      <li data-search="j-92 linux"><a href="/prototypes/preview/J-92.html"><span class="code">J-92</span><span class="label">Linux</span></a></li>
+      <li data-search="j-93 ubuntu"><a href="/prototypes/preview/J-93.html"><span class="code">J-93</span><span class="label">Ubuntu</span></a></li>
+      <li data-search="j-100 識字（リテラシー）"><a href="/prototypes/preview/J-100.html"><span class="code">J-100</span><span class="label">識字（リテラシー）</span></a></li>
+      <li data-search="j-103 ループエンジニアリング"><a href="/prototypes/preview/J-103.html"><span class="code">J-103</span><span class="label">ループエンジニアリング</span></a></li>
+      <li data-search="j-106 ハーネスエンジニアリング"><a href="/prototypes/preview/J-106.html"><span class="code">J-106</span><span class="label">ハーネスエンジニアリング</span></a></li>
+      <li data-search="j-115 npu・ai pc"><a href="/prototypes/preview/J-115.html"><span class="code">J-115</span><span class="label">NPU・AI PC</span></a></li>
+      <li data-search="j-116 tpu"><a href="/prototypes/preview/J-116.html"><span class="code">J-116</span><span class="label">TPU</span></a></li>
+      <li data-search="j-117 データセンターと電力"><a href="/prototypes/preview/J-117.html"><span class="code">J-117</span><span class="label">データセンターと電力</span></a></li>
+      <li data-search="j-118 グラフエンジニアリング"><a href="/prototypes/preview/J-118.html"><span class="code">J-118</span><span class="label">グラフエンジニアリング</span></a></li>
+      <li data-search="j-119 iso/iec 23894"><a href="/prototypes/preview/J-119.html"><span class="code">J-119</span><span class="label">ISO/IEC 23894</span></a></li>
+      <li data-search="j-120 nist ai rmf"><a href="/prototypes/preview/J-120.html"><span class="code">J-120</span><span class="label">NIST AI RMF</span></a></li>
+      <li data-search="j-121 ai システム影響評価"><a href="/prototypes/preview/J-121.html"><span class="code">J-121</span><span class="label">AI システム影響評価</span></a></li>
+      <li data-search="j-122 リスクアセスメント"><a href="/prototypes/preview/J-122.html"><span class="code">J-122</span><span class="label">リスクアセスメント</span></a></li>
+      <li data-search="j-123 マネジメントシステム共通構造"><a href="/prototypes/preview/J-123.html"><span class="code">J-123</span><span class="label">マネジメントシステム共通構造</span></a></li>
+      <li data-search="j-124 iso/iec 27001"><a href="/prototypes/preview/J-124.html"><span class="code">J-124</span><span class="label">ISO/IEC 27001</span></a></li>
+      <li data-search="j-125 適用宣言書"><a href="/prototypes/preview/J-125.html"><span class="code">J-125</span><span class="label">適用宣言書</span></a></li>
+      <li data-search="j-126 内部監査とマネジメントレビュー"><a href="/prototypes/preview/J-126.html"><span class="code">J-126</span><span class="label">内部監査とマネジメントレビュー</span></a></li>
+      <li data-search="j-127 決定論と非決定論"><a href="/prototypes/preview/J-127.html"><span class="code">J-127</span><span class="label">決定論と非決定論</span></a></li>
+      <li data-search="j-128 ワークフローとエージェント"><a href="/prototypes/preview/J-128.html"><span class="code">J-128</span><span class="label">ワークフローとエージェント</span></a></li>
+      <li data-search="j-129 コンテキスト腐敗"><a href="/prototypes/preview/J-129.html"><span class="code">J-129</span><span class="label">コンテキスト腐敗</span></a></li>
+      <li data-search="j-130 推論時スケーリング"><a href="/prototypes/preview/J-130.html"><span class="code">J-130</span><span class="label">推論時スケーリング</span></a></li>
+      <li data-search="j-131 rlvr"><a href="/prototypes/preview/J-131.html"><span class="code">J-131</span><span class="label">RLVR</span></a></li>
+      <li data-search="j-132 a2a"><a href="/prototypes/preview/J-132.html"><span class="code">J-132</span><span class="label">A2A</span></a></li>
+      <li data-search="j-133 オブザーバビリティ"><a href="/prototypes/preview/J-133.html"><span class="code">J-133</span><span class="label">オブザーバビリティ</span></a></li>
+      <li data-search="j-134 human-in-the-loop"><a href="/prototypes/preview/J-134.html"><span class="code">J-134</span><span class="label">Human-in-the-loop</span></a></li>
+      <li data-search="j-135 機能安全"><a href="/prototypes/preview/J-135.html"><span class="code">J-135</span><span class="label">機能安全</span></a></li>
+      <li data-search="j-136 3 ステップメソッド"><a href="/prototypes/preview/J-136.html"><span class="code">J-136</span><span class="label">3 ステップメソッド</span></a></li>
+      <li data-search="j-137 alarp"><a href="/prototypes/preview/J-137.html"><span class="code">J-137</span><span class="label">ALARP</span></a></li>
+      <li data-search="j-138 是正処置と不適合"><a href="/prototypes/preview/J-138.html"><span class="code">J-138</span><span class="label">是正処置と不適合</span></a></li>
+      <li data-search="j-139 説明可能性"><a href="/prototypes/preview/J-139.html"><span class="code">J-139</span><span class="label">説明可能性</span></a></li>
+      <li data-search="j-140 iec 62443"><a href="/prototypes/preview/J-140.html"><span class="code">J-140</span><span class="label">IEC 62443</span></a></li>
+      <li data-search="j-141 サーベイランス審査"><a href="/prototypes/preview/J-141.html"><span class="code">J-141</span><span class="label">サーベイランス審査</span></a></li>
+      <li data-search="j-142 文書化した情報と力量"><a href="/prototypes/preview/J-142.html"><span class="code">J-142</span><span class="label">文書化した情報と力量</span></a></li>
+      <li data-search="j-143 モデルカード"><a href="/prototypes/preview/J-143.html"><span class="code">J-143</span><span class="label">モデルカード</span></a></li>
+      <li data-search="j-144 インシデント報告"><a href="/prototypes/preview/J-144.html"><span class="code">J-144</span><span class="label">インシデント報告</span></a></li>
+      <li data-search="j-145 人間中心のai社会原則"><a href="/prototypes/preview/J-145.html"><span class="code">J-145</span><span class="label">人間中心のAI社会原則</span></a></li>
+      <li data-search="j-146 ゾーンとコンジット"><a href="/prototypes/preview/J-146.html"><span class="code">J-146</span><span class="label">ゾーンとコンジット</span></a></li>
+      <li data-search="j-147 データ品質"><a href="/prototypes/preview/J-147.html"><span class="code">J-147</span><span class="label">データ品質</span></a></li>
+      <li data-search="j-148 pdca"><a href="/prototypes/preview/J-148.html"><span class="code">J-148</span><span class="label">PDCA</span></a></li>
+      <li data-search="j-149 第三者認証と自己宣言"><a href="/prototypes/preview/J-149.html"><span class="code">J-149</span><span class="label">第三者認証と自己宣言</span></a></li>
+      <li data-search="j-150 トレーサビリティ"><a href="/prototypes/preview/J-150.html"><span class="code">J-150</span><span class="label">トレーサビリティ</span></a></li>
     </ul>
   <h2>表紙・裏表紙</h2>
     <ul class="grid">
-      <li data-search="vibe-coding-back-cover vibecoding 図鑑 裏表紙案"><a href="/covers/vibe-coding-back-cover.html">VibeCoding 図鑑 裏表紙案</a></li>
-      <li data-search="vibe-coding-cover-a バイブコーディング用語図鑑 表紙案a"><a href="/covers/vibe-coding-cover-a.html">バイブコーディング用語図鑑 表紙案A</a></li>
-      <li data-search="vibe-coding-cover-rich バイブコーディング用語図鑑 表紙リッチ案"><a href="/covers/vibe-coding-cover-rich.html">バイブコーディング用語図鑑 表紙リッチ案</a></li>
-      <li data-search="vibe-coding-cover-sell 表紙再設計案"><a href="/covers/vibe-coding-cover-sell.html">表紙再設計案</a></li>
+      <li data-search="vibe-coding-back-cover vibecoding 図鑑 裏表紙案"><a href="/covers/vibe-coding-back-cover.html"><span class="label">VibeCoding 図鑑 裏表紙案</span></a></li>
+      <li data-search="vibe-coding-cover-a バイブコーディング用語図鑑 表紙案a"><a href="/covers/vibe-coding-cover-a.html"><span class="label">バイブコーディング用語図鑑 表紙案A</span></a></li>
+      <li data-search="vibe-coding-cover-rich バイブコーディング用語図鑑 表紙リッチ案"><a href="/covers/vibe-coding-cover-rich.html"><span class="label">バイブコーディング用語図鑑 表紙リッチ案</span></a></li>
+      <li data-search="vibe-coding-cover-sell 表紙再設計案"><a href="/covers/vibe-coding-cover-sell.html"><span class="label">表紙再設計案</span></a></li>
     </ul>
   <h2>オープニング見開き</h2>
     <ul class="grid">
-      <li data-search="opening-spread-annotated 冒頭見開き 注釈ページ"><a href="/opening/opening-spread-annotated.html">冒頭見開き 注釈ページ</a></li>
+      <li data-search="opening-spread-annotated 冒頭見開き 注釈ページ"><a href="/opening/opening-spread-annotated.html"><span class="label">冒頭見開き 注釈ページ</span></a></li>
     </ul>
   <h2>誌面モック / Design Philosophy v2</h2>
     <ul class="grid">
-      <li data-search="b3_chatgpt_spread b-3 chatgpt 見開き — 他エントリ適応確認"><a href="/prototypes/mockups/design_philosophy_v2/b3_chatgpt_spread.html">B-3 ChatGPT 見開き — 他エントリ適応確認</a></li>
-      <li data-search="typescript_spread typescript 見開き — iter 1"><a href="/prototypes/mockups/design_philosophy_v2/typescript_spread.html">TypeScript 見開き — iter 1</a></li>
+      <li data-search="b3_chatgpt_spread b-3 chatgpt 見開き — 他エントリ適応確認"><a href="/prototypes/mockups/design_philosophy_v2/b3_chatgpt_spread.html"><span class="label">B-3 ChatGPT 見開き — 他エントリ適応確認</span></a></li>
+      <li data-search="typescript_spread typescript 見開き — iter 1"><a href="/prototypes/mockups/design_philosophy_v2/typescript_spread.html"><span class="label">TypeScript 見開き — iter 1</span></a></li>
     </ul>
   <h2>誌面モック / A・B・C 案</h2>
     <ul class="grid">
-      <li data-search="design_a_v2_human 誌面モック a案 v2：人物入り clean zukan"><a href="/prototypes/mockups/design_A_v2_human.html">誌面モック A案 v2：人物入り Clean Zukan</a></li>
-      <li data-search="design_a_zukan 誌面モック a案：clean zukan"><a href="/prototypes/mockups/design_A_zukan.html">誌面モック A案：Clean Zukan</a></li>
-      <li data-search="design_b_editorial 誌面モック b案：editorial navy"><a href="/prototypes/mockups/design_B_editorial.html">誌面モック B案：Editorial Navy</a></li>
-      <li data-search="design_c_blueprint 誌面モック c案：blueprint / tech note"><a href="/prototypes/mockups/design_C_blueprint.html">誌面モック C案：Blueprint / Tech Note</a></li>
-      <li data-search="index モック一覧"><a href="/prototypes/mockups/index.html">モック一覧</a></li>
+      <li data-search="design_a_v2_human 誌面モック a案 v2：人物入り clean zukan"><a href="/prototypes/mockups/design_A_v2_human.html"><span class="label">誌面モック A案 v2：人物入り Clean Zukan</span></a></li>
+      <li data-search="design_a_zukan 誌面モック a案：clean zukan"><a href="/prototypes/mockups/design_A_zukan.html"><span class="label">誌面モック A案：Clean Zukan</span></a></li>
+      <li data-search="design_b_editorial 誌面モック b案：editorial navy"><a href="/prototypes/mockups/design_B_editorial.html"><span class="label">誌面モック B案：Editorial Navy</span></a></li>
+      <li data-search="design_c_blueprint 誌面モック c案：blueprint / tech note"><a href="/prototypes/mockups/design_C_blueprint.html"><span class="label">誌面モック C案：Blueprint / Tech Note</span></a></li>
+      <li data-search="index モック一覧"><a href="/prototypes/mockups/index.html"><span class="label">モック一覧</span></a></li>
     </ul>
   <h2>ツール</h2>
     <ul class="grid">
-      <li data-search="ponchi_quality_review ponchi quality review"><a href="/tools/ponchi_quality_review.html">Ponchi Quality Review</a></li>
+      <li data-search="ponchi_quality_review ponchi quality review"><a href="/tools/ponchi_quality_review.html"><span class="label">Ponchi Quality Review</span></a></li>
     </ul>
 </main>
 <footer>
