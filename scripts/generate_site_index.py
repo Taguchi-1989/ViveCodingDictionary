@@ -113,9 +113,10 @@ def build_html(items: list[tuple[Path, str]]) -> str:
   h3 { font-size: 0.85rem; color: #2a5db0; margin: 14px 0 6px; }
   ul.grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 12px; }
   ul.grid li { font-size: 0.82rem; line-height: 1.5; }
-  ul.grid a { color: #1a3a6c; text-decoration: none; padding: 3px 6px; border-radius: 4px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  ul.grid a { color: #1a3a6c; text-decoration: none; padding: 3px 6px; border-radius: 4px; display: flex; align-items: baseline; gap: 6px; }
+  ul.grid a .label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   ul.grid a:hover { background: #e6eef9; }
-  .code { color: #2a5db0; font-weight: 700; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.78rem; margin-right: 4px; }
+  .code { flex: 0 0 auto; min-width: 3.4em; color: #2a5db0; font-weight: 700; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.78rem; }
   .hero { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 4px 0 20px; }
   .hero-card { display: flex; flex-direction: column; gap: 4px; background: #fff; border: 1px solid #d4dded; border-radius: 10px; padding: 14px 16px; text-decoration: none; color: #1a2333; }
   .hero-card:hover { border-color: #2a5db0; box-shadow: 0 2px 8px rgba(12,37,82,0.08); }
@@ -168,17 +169,26 @@ def build_html(items: list[tuple[Path, str]]) -> str:
             if sub:
                 parts.append(f"    <h3>{html.escape(sub)}</h3>\n")
             parts.append('    <ul class="grid">\n')
+
+            def code_of(rel: str) -> str:
+                name = rel.split("/")[-1].removesuffix(".html")
+                return name if re.match(r"^[A-Z]-\d+$", name) else ""
+
+            # ID を持つ行が 1 つでもあるグループでは、持たない行にも空のバッジ枠を
+            # 置いて桁を揃える。全行が ID なしのグループ（前付け・検索など）では
+            # 余白が無駄になるので枠ごと省く。
+            has_code = any(code_of(rel) for rel, _ in entries)
             for rel, title in entries:
                 name = rel.split("/")[-1].removesuffix(".html")
-                code = name if re.match(r"^[A-Z]-\d+$", name) else ""
-                label = title if not code else title
+                code = code_of(rel)
                 parts.append(
                     f'      <li data-search="{html.escape((name + " " + title).lower())}">'
                 )
-                if code:
+                parts.append(f'<a href="/{html.escape(rel)}">')
+                if has_code:
                     parts.append(f'<span class="code">{html.escape(code)}</span>')
                 parts.append(
-                    f'<a href="/{html.escape(rel)}">{html.escape(label)}</a></li>\n'
+                    f'<span class="label">{html.escape(title)}</span></a></li>\n'
                 )
             parts.append("    </ul>\n")
 
