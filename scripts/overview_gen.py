@@ -73,10 +73,21 @@ def tsumazuki_total_class(n: int) -> str:
     return 'ok'
 
 
+def ponchi_final_ext(entry_id: str) -> str | None:
+    """final ディレクトリで .webp を優先し、無ければ .png を返す。見つからなければ None。"""
+    for ext in ('webp', 'png'):
+        if (PONCHI_FINAL_DIR / f'{entry_id}.{ext}').exists():
+            return ext
+    return None
+
+
 def collect():
     rows = []
     ponchi_ids = {p.stem for p in PONCHI_DIR.glob('*.svg')}
-    ponchi_final_ids = {p.stem for p in PONCHI_FINAL_DIR.glob('*.png')}
+    ponchi_final_ids = {
+        p.stem for p in PONCHI_FINAL_DIR.iterdir()
+        if p.suffix.lower() in ('.webp', '.png')
+    }
     for f in sorted(ENTRIES.rglob('*.md')):
         text = f.read_text(encoding='utf-8')
         fm, body = parse(text)
@@ -228,7 +239,7 @@ def gen_html(rows):
     median_d = sorted(valid_dens)[len(valid_dens) // 2] if valid_dens else 0
     ponchi_count = sum(1 for r in rows if r['has_ponchi'])
     ponchi_final_count = sum(1 for r in rows if r.get('has_ponchi_final'))
-    P(f'<div class="subtitle">全 {total_count} 件 / ready {total_ready} / needs_review {total_nr} / ポンチ絵 PNG あり {ponchi_final_count} 件・画像生成待ち {total_count - ponchi_final_count} 件 / 本文密度中央値 {median_d} 字（TS 基準 {TS_BASELINE} 字 比 {median_d*100//TS_BASELINE}%）</div>')
+    P(f'<div class="subtitle">全 {total_count} 件 / ready {total_ready} / needs_review {total_nr} / ポンチ絵あり {ponchi_final_count} 件・画像生成待ち {total_count - ponchi_final_count} 件 / 本文密度中央値 {median_d} 字（TS 基準 {TS_BASELINE} 字 比 {median_d*100//TS_BASELINE}%）</div>')
     P('<div class="toolbar">')
     P('<span style="font-size:12px;font-weight:600;">章フィルタ:</span>')
     P('<button class="btn on" data-filter="all" onclick="filterChapter(this)">すべて</button>')
@@ -337,15 +348,16 @@ def gen_html(rows):
                 else:
                     row_cells.append('<td class="num na">—</td>')
 
-            # ponchi indicator: PNG thumbnail / SVG marker / pending
-            if r.get('has_ponchi_final'):
-                img_src = f'../../../assets/ponchi/final/{r["id"]}.png'
+            # ponchi indicator: 画像サムネ（webp 優先）/ SVG marker / pending
+            ext = ponchi_final_ext(r['id']) if r.get('has_ponchi_final') else None
+            if ext:
+                img_src = f'../../../assets/ponchi/final/{r["id"]}.{ext}'
                 row_cells.append(
                     f'<td class="ponchi has"><span class="ponchi-thumb">'
                     f'<img src="{img_src}" alt="{escape(r["id"])}" loading="lazy" title="{escape(r["id"])} {escape(r["title"])}"></span></td>'
                 )
             elif r['has_ponchi']:
-                row_cells.append('<td class="ponchi has"><span class="ponchi-thumb svg-only" title="SVG のみ（PNG 待ち）">◐</span></td>')
+                row_cells.append('<td class="ponchi has"><span class="ponchi-thumb svg-only" title="SVG のみ（画像待ち）">◐</span></td>')
             else:
                 row_cells.append('<td class="ponchi pending"><span class="ponchi-thumb svg-only" style="color:#aab2c0;border-style:dotted;" title="画像生成待ち">○</span></td>')
 

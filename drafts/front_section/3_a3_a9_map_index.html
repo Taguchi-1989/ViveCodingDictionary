@@ -18,11 +18,19 @@
     flex-direction: column;
     gap: var(--sp-4);
   }
+  /* 円環の地図（生成画像）。章ラベルは下のグリッドが凡例を兼ねる */
+  .route-map-art {
+    display: block;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
   .chapter-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: var(--sp-2);
-    flex: 1;
   }
   .chapter-node {
     border: 1.5px solid var(--ink);
@@ -165,6 +173,8 @@
     </p>
 
     <div class="chapter-map">
+      <img class="route-map-art" src="../../assets/front_section/generated/3-1_chapter_route_map.png" alt="A〜J の 10 章を円環に並べ、3 本のルートで結んだ地図">
+
       <div class="chapter-grid">
         <div class="chapter-node"><span class="letter">A</span><span class="theme">はじめに</span></div>
         <div class="chapter-node"><span class="letter">B</span><span class="theme">サービス</span></div>
@@ -237,7 +247,7 @@
       <div class="kind"><strong>アルファベット順</strong>略称で引く（GPT, MCP, RAG など）</div>
     </div>
 
-    <div class="index-note">語の一覧は <strong>巻末の全件索引（全 354 語）</strong> にまとめました。ここでは「どう探すか」だけ示します。</div>
+    <div class="index-note">語の一覧は <strong>巻末の全件索引（全 469 語）</strong> にまとめました。ここでは「どう探すか」だけ示します。</div>
 
     <div class="page-foot">
       <div class="left-meta">A-9 · FRONT</div>

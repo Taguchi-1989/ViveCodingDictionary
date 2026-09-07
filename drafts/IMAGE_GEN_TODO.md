@@ -21,16 +21,18 @@ HTML たたき台に置いた「イラスト枠」「サムネ枠」を、最終
 
 | 進捗 | スプレッド | 枠数 | ファイル |
 |:-:|:--|:-:|:--|
-| ☐ | 0. 扉 | 4 | [front_section/0_concept_spread.html](front_section/0_concept_spread.html) |
-| ☐ | 1. まえがき | 1 | [front_section/1_a1_preface.html](front_section/1_a1_preface.html) |
-| ☐ | 2. 見開き分解図 | 1（下地） | [front_section/2_a2_anatomy.html](front_section/2_a2_anatomy.html) |
-| ☐ | 3. 図鑑の歩き方＋索引 | 1 | [front_section/3_a3_a9_map_index.html](front_section/3_a3_a9_map_index.html) |
+| ☑ | 0. 扉 | 4 | [front_section/0_concept_spread.html](front_section/0_concept_spread.html) |
+| ☑ | 1. まえがき | 1 | [front_section/1_a1_preface.html](front_section/1_a1_preface.html) |
+| ☑ | 2. 見開き分解図 | 1（下地） | [front_section/2_a2_anatomy.html](front_section/2_a2_anatomy.html) |
+| ☑ | 3. 図鑑の歩き方＋索引 | 1 | [front_section/3_a3_a9_map_index.html](front_section/3_a3_a9_map_index.html) |
 | ☐ | 4. 注意マーク凡例 | 0（記号のみ） | [front_section/4_a4_a5_a6_legend_marks.html](front_section/4_a4_a5_a6_legend_marks.html) |
-| ☐ | 5. 図と色の見本帳 | 5（図サムネ） | [front_section/5_a7_a8_swatch.html](front_section/5_a7_a8_swatch.html) |
+| ✕ | 5. 図と色の見本帳 | 0（枠廃止） | [front_section/5_a7_a8_swatch.html](front_section/5_a7_a8_swatch.html) |
 | ☐ | 6. 更新履歴と略称 | 0（タイムライン CSS） | [front_section/6_a10_a11_log_glossary.html](front_section/6_a10_a11_log_glossary.html) |
-| ☐ | 7. あとがき | 1 | [back_section/afterword.html](back_section/afterword.html) |
+| ☑ | 7. あとがき | 1 | [back_section/afterword.html](back_section/afterword.html) |
 
-**合計画像枠: 13 枠**（うち本気イラスト 6 / ミニサムネ 5 / 大判下地 1 / その他 1）
+**合計画像枠: 13 枠 → 実装 8 枠**（本気イラスト 6 / 大判下地 1 / 見開きミニチュア 1）。**ミニサムネ 5 枠は枠ごと廃止**（A-7「図のタイプ」が v2 で廃止されたため。生成済みの `5-1`〜`5-5_thumb_*.png` は未使用のまま `assets/front_section/generated/` に残しています）
+
+**2026-09-07 時点で 8 枠すべて HTML に差し込み済み**です。
 
 ---
 
@@ -146,7 +148,11 @@ HTML たたき台に置いた「イラスト枠」「サムネ枠」を、最終
 
 ## 5. 図と色の見本帳 (A-7 + A-8)
 
-### 枠 5-1〜5-5: 5 種類の図タイプ ミニサムネ
+> **2026-09-07: この 5 枠は廃止しました。** A-7「図のタイプ」自体が v2 で廃止され、
+> 5_a7_a8_swatch.html は「色と記号の凡例」2 ページに組み替わっています。生成済みの
+> `5-1`〜`5-5_thumb_*.png` は未使用のまま残置。以下は経緯の記録です。
+
+### 枠 5-1〜5-5: 5 種類の図タイプ ミニサムネ（廃止）
 
 各サムネは本編エントリのメイン図を模した小さな代表図。
 
@@ -236,3 +242,4 @@ HTML 内に純 CSS のラフ実装あり。最終版は本編から実物の代�
 
 - 2026-05-24: 初版。前付け 7 spread + 巻末あとがき 1 spread の全画像枠を集約
 - 2026-09-02: 本編「スコープ地図バッチ」5 枚を追加（docs/scope_map_figure_spec.md）
+- 2026-09-07: 未反映だった 2 枠（0-4 見開きミニチュア / 3-1 章ルート地図）を HTML に差し込み。5-1〜5-5 は枠ごと廃止に整理

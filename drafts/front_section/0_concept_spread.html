@@ -62,48 +62,37 @@
   }
 
   /* 右ページ: 見開きミニチュア */
-  .mini-spread {
-    display: flex;
-    gap: 0;
+  /* 実物の見え方（生成画像）。下の .mini-spread がブロック名の凡例を兼ねる */
+  .mini-spread-art {
+    display: block;
     width: 100%;
-    height: 360px;
-    border: 1.5px solid var(--ink);
-    border-radius: 4px;
-    overflow: hidden;
-    margin: var(--sp-6) 0;
+    margin: var(--sp-5) 0 var(--sp-3);
+    mix-blend-mode: multiply;
+  }
+  .mini-key {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-4);
+    margin: 0 0 var(--sp-4);
+    padding: var(--sp-3) var(--sp-4);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
     background: var(--paper-2);
   }
-  .mini-page {
-    flex: 1;
-    padding: var(--sp-3);
-    position: relative;
-    font-size: 9px;
-    color: var(--ink-3);
-  }
-  .mini-page.left {
-    border-right: 1px dashed var(--rule-strong);
-  }
-  .mini-page .mini-label {
-    position: absolute;
-    top: 6px;
-    left: 6px;
+  .mini-key .mini-label {
     font-family: var(--font-en);
-    font-size: 8px;
+    font-size: 9px;
     letter-spacing: 0.12em;
     color: var(--ink-blue);
+    margin-bottom: 4px;
   }
-  .mini-block {
-    background: var(--paper);
-    border: 1px solid var(--rule);
-    margin: 14px 0 6px 0;
-    padding: 4px 6px;
-    font-size: 8px;
-    border-radius: 2px;
+  .mini-key ol {
+    margin: 0;
+    padding-left: 1.3em;
+    font-size: 11px;
+    line-height: 1.75;
+    color: var(--ink);
   }
-  .mini-block.tag { background: var(--ink-blue-50); border-color: var(--ink-blue-100); }
-  .mini-block.fig { height: 80px; background: linear-gradient(135deg, #F3F6FB 0%, #EAF1FB 100%); }
-  .mini-block.sixview { height: 90px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; padding: 4px; }
-  .mini-block.sixview > div { background: var(--paper-3); border-radius: 1px; }
 
   .mini-callouts {
     list-style: none;
@@ -204,25 +193,28 @@
       各項目は、見開き 2 ページで完結します。左ページで意味と出会う場面をつかみ、右ページで役割・うれしさ・注意点・関連語を確認します。気になる語だけ読んで構いません。
     </p>
 
-    <!-- 見開きミニチュア -->
-    <div class="mini-spread">
-      <div class="mini-page left">
+    <!-- 見開きミニチュア: 実物の見え方（生成画像）→ 下に各ブロックの名前 -->
+    <img class="mini-spread-art" src="../../assets/front_section/generated/0-4_entry_spread_miniature.png" alt="本書 1 見開きのミニチュア俯瞰図。左ページに tagline 帯・メイン図・ポンチ絵、右ページに 6 視点・開発フロー・関連用語ピルが並ぶ">
+
+    <div class="mini-key">
+      <div class="mini-key-col">
         <div class="mini-label">LEFT · つかむ</div>
-        <div class="mini-block tag">tagline 青帯</div>
-        <div class="mini-block">何をしてくれるか</div>
-        <div class="mini-block">どこで出会うか</div>
-        <div class="mini-block fig">メイン図</div>
-        <div class="mini-block" style="background: var(--paper-3);">擬人化ポンチ絵</div>
+        <ol>
+          <li>tagline 青帯</li>
+          <li>何をしてくれるか</li>
+          <li>どこで出会うか</li>
+          <li>メイン図</li>
+          <li>擬人化ポンチ絵</li>
+        </ol>
       </div>
-      <div class="mini-page right">
+      <div class="mini-key-col">
         <div class="mini-label">RIGHT · 使う</div>
-        <div class="mini-block sixview">
-          <div></div><div></div><div></div>
-          <div></div><div></div><div></div>
-        </div>
-        <div class="mini-block">開発フローでの位置</div>
-        <div class="mini-block">関連用語ピル</div>
-        <div class="mini-block" style="background: var(--paper-2);">著者欄（つまずき・コメント）</div>
+        <ol>
+          <li>見どころ 6 視点</li>
+          <li>開発フローでの位置</li>
+          <li>関連用語ピル</li>
+          <li>著者欄（つまずき・コメント）</li>
+        </ol>
       </div>
     </div>
 
